@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test2</title>
+  </head>
+  <body>
+    <h1>
+      Q2. 0~1000사이의 정수 5개를 랜덤으로 생성하여 가장 큰 수와 가장 작은 수
+      출력
+    </h1>
+    <button type="button" onclick="random()">랜덤 수 만들기</button>
+    <h1>Min : <span id="min"></span> Max : <span id="max"></span></h1>
+    <h3 id="ranNum"></h3>
+    <script>
+      function random() {
+        const arr = [];
+        while (arr.length < 5) {
+          let ran = Math.floor(Math.random() * 1001);
+          arr.push(ran);
+          document.getElementById("ranNum").innerText = arr;
+        }
+        document.getElementById("min").innerText = Math.min(...arr);
+        document.getElementById("max").innerText = Math.max.apply(null, arr);
+      }
+    </script>
+  </body>
+</html>

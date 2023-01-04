@@ -1,0 +1,10 @@
+package day10;
+
+public class T_로또실행프로그램 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

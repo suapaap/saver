@@ -1,0 +1,51 @@
+package studentmanager;
+
+import java.util.Scanner;
+
+public class StudentManager implements Program {
+	private Student[] std = new Student[10];
+	private int stuCount; // 등록한 학생 카운트
+	@Override
+	public void printStudent() {
+				
+	}
+	@Override
+	public void insertStudent(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void serchStudent(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void registerSubject(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void deleteSubject(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+	/* 수강관리프로그램 - main
+	 * --메뉴--
+	 * 1. 학생등록
+	 * 2. 학생확인(학생리스트)
+	 * 3. 학생검색
+	 * 4. 수강신청
+	 * 5. 수강철회
+	 * 6. 종료
+	 * */
+	public void printMenu() {
+		System.out.println("----menu----");
+		System.out.println("1. 학생등록");
+		System.out.println("2. 학생리스트");
+		System.out.println("3. 학생검색");
+		System.out.println("4. 수강신청");
+		System.out.println("5. 수강철회");
+		System.out.println("6. 종료");
+		System.out.println("메뉴를 선택해주세요");
+	}
+}

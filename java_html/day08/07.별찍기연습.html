@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    입력받은숫자 : <input type="number" id="height" />
+    <button type="button" onclick="stars()">별개수</button>
+    <h3 id="printStar"></h3>
+
+    <script>
+      function stars() {
+        let star = document.getElementById("height").value;
+        document.getElementById("printStar").innerText = ` `;
+
+        for (let i = 0; i < star; i++) {
+          for (let j = 0; j <= i; j++) {
+            document.getElementById("printStar").innerText += `*`;
+          }
+          document.getElementById("printStar").innerHTML += `<br>`;
+        }
+      }
+    </script>
+  </body>
+</html>

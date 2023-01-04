@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>합계구하기</title>
+</head>
+<body>
+    <form action="" id="myForm">
+        <fieldset>
+            <legend>성적확인</legend>
+            이름 : <input type="text" id="name"><br>
+            국어 : <input type="text" id="kor"><br>
+            영어 : <input type="text" id="eng"><br>
+            수학 : <input type="text" id="math"><br>
+            <button type="button" id="sbmBtn" onclick="clickEvent()">계산</button>
+        </fieldset>
+    </form>
+    <h3 id="sum"></h3>
+    <script>
+        function clickEvent(){
+            let name = document.getElementById('name').value; //string
+            let kor = document.getElementById('kor').value; 
+            let eng = document.getElementById('eng').value; 
+            let math = document.getElementById('math').value; 
+            let avg = 0;
+            let pass = '';
+            let grade = '';
+
+            //만약 점수가 0~100 값이 아닐경우 경고창 (alert : 경고창)
+            if(kor<0 || kor>100 || eng<0 || eng>100 || math<0 || math>100){
+                alert('0~100사이의 값을 입력해주소.');
+            }else{
+                kor = parseInt(kor); // Number(kor) 둘다 가능 number는 실수도 가능
+                eng = parseInt(eng);
+                math = parseInt(math);
+                sum = kor + eng + math;
+                avg = Math.round(sum/3);
+                if(avg>=60){
+                    pass='합격';
+                }else{
+                    pass='불합격';
+                }
+                if(avg>=90) {
+                    grade='A';
+                } else if(avg>=80) {
+                    grade='B';
+                } else if(avg>=70) {
+                    grade='C';
+                }
+                else { 
+                    grade='D';                    
+                }
+            }
+        
+                
+                
+                
+            // 결과를 표현해야 하는 위치에 결과를 출력
+            // 숫자의 결과가 없으면 (숫자로 변환되지 않은 값이 온다면) NaN 로 나타남
+            document.getElementById('sum').innerText=
+            `이름 : ${name}, 합계 : ${sum}, 평균 : ${avg}, 등급 : ${grade}, 합격여부 : ${pass}`;
+            // document.getElementById()
+
+            //평균, 합격여부, 등급
+            //합격여부 평균 60이상
+            // 등급: 90이상A,80이상B,70이상C,60이하D
+        }
+        
+    </script>
+</body>
+</html>

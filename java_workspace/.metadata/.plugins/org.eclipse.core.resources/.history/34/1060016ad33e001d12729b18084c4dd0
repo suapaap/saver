@@ -1,0 +1,14 @@
+package day11;
+
+import java.util.TreeSet;
+
+public class TreeSet02 {
+
+	public static void main(String[] args) {
+		//가장 큰 점수 출력, 가장 작은 점수 출력
+		int[] score = {80,95,78,32,56,12,98,66};
+		TreeSet<Integer> set = new TreeSet<>();
+		set.add(score);
+	}
+
+}

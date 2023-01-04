@@ -1,0 +1,14 @@
+package day09;
+
+import java.util.Date;
+
+public class DateEx01 {
+
+	public static void main(String[] args) {
+		Date d = new Date(); // depercated : 비권장
+		d.getDate();
+		d.getHours();
+		System.out.println(d);
+	}
+
+}

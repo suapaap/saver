@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>li Tag 추가하는 예제</h1>
+    <button type="button" id="bt1" onclick="allAdd()">
+      Tag 한번에 추가하기
+    </button>
+    <button type="button" id="bt2" onclick="onlyAdd()">
+      Tag 하나씩 추가하기
+    </button>
+    <button type="button" id="bt3" onclick="allAdd2()">
+      Tag 한번에 추가하기
+    </button>
+    <button type="button" id="bt4" onclick="onlyAdd2()">
+      Tag 하나씩 추가하기
+    </button>
+    <ul id="ul"></ul>
+    <hr />
+    <ol id="ol"></ol>
+    <ul id="ul2"></ul>
+    <ol id="ol2"></ol>
+    <hr />
+    <script>
+      let arr = ["HTML", "CSS", "JavaScript", "SQL"];
+      function allAdd() {
+        for (const a of arr) {
+          document.getElementById("ul").innerHTML += `<li>${a}</li>`;
+        }
+      }
+      let i = 0;
+      function onlyAdd() {
+        // let arr2 = [];
+        // for (i = 0; i <= arr.length; i++) {
+        //     arr2.push(arr[i]);
+        if (i > arr.length - 1) {
+          alert("더 없음");
+        } else {
+          document.getElementById("ol").innerHTML += `<li>${arr[i]}</li>`;
+          i++;
+        }
+      }
+      function allAdd2() {
+        let ulTag = document.querySelector("#ul2");
+        let liTag = document.createElement("li");
+        for (const a of arr) {
+          ulTag.appendChild(liTag);
+          liTag.innerText += a;
+        }
+      }
+
+      function onlyAdd2() {
+        let ulTag = document.querySelector("#ol2");
+        let liTag = document.createElement("li");
+        if (i > arr.length - 1) {
+          alert("더 없음");
+        } else {
+          ulTag.appendChild(liTag);
+          liTag.innerText = arr[i];
+          i++;
+        }
+      }
+    </script>
+  </body>
+</html>

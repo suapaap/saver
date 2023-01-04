@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        background-color: navajowhite;
+        text-align: center;
+      }
+
+      .material-symbols-outlined {
+        color: black;
+        font-size: 500px;
+      }
+      #change {
+        color: red;
+        font-weight: 900;
+      }
+      #normal {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <i><span class="material-symbols-outlined"> rocket_launch </span></i>
+      <p id="change"></p>
+      <p id="normal">HTML/CSS/JavaScript</p>
+    </div>
+    <script>
+      let target = document.getElementById("change");
+
+      function change() {
+        let arr = ["Learn to HTML", "Learn to CSS", "Learn to JavaScript"];
+        let selectArr = arr[Math.floor(Math.random() * arr.length)];
+        let randomArr = selectArr.spsplit("");
+        return randomArr;
+      }
+
+      function reset() {
+        target.textContent = "";
+        dynamic(change());
+      }
+
+      function dynamic(randomArr) {
+        if (randomArr.length > 0) {
+          target.textContent += randomArr.shift();
+          setTimeout(function () {
+            dynamic(randomArr);
+          }, 100);
+        } else {
+          setTimeout(reset, 2000);
+        }
+      }
+
+      dynamic(change());
+
+      //   function blink() {
+      //     target.classList.toggle("active");
+      //   }
+      //   setInterval(blink, 500);
+    </script>
+  </body>
+</html>

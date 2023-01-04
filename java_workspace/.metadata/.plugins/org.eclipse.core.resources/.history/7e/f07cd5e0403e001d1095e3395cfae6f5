@@ -1,0 +1,98 @@
+package day10;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class List02_Re {
+	public static void main(String[] args) {
+		/* ---메뉴판---
+		 * 1. 햄버거 : 15000
+		 * 2. 피자 : 20000
+		 * 3. 음료 : 2000
+		 * 4. 과자 : 1000
+		 * 5. 사탕 : 500
+		 * 6. 프로그램 종료
+		 * 
+		 * 메뉴를 선택해주세요. 1  수량을 입력해주세요. 1
+		 * 메뉴를 선책해주세요. 2  수량을 입력해주세요. 2
+		 * 주문을 끝내시려면 0을 눌러주세요.
+		 * 
+		 * ---선택한 메뉴---
+		 * 햄버거 1개 : 15000
+		 * 피자 2개 : 40000
+		 * 주문하신 금액은 55000입니다.
+		 */
+		Scanner scan = new Scanner(System.in);
+		FoodManager fm = new FoodManager(); 
+		int menu = 0;
+		int count = 0;
+		
+		do {
+			fm.printMenu();
+			System.out.println("메뉴를 입력해주세요.");
+			menu = scan.nextInt();
+			if(menu==6) {
+				System.out.println("종료합니다.");
+				break;
+			}
+			System.out.println("수량을 입력해주세요.");
+			count = scan.nextInt();
+			//System.out.println("주문을 끝내시려면 0을 눌러주세요.");
+			fm.sale(menu, count);
+		}while(menu != 6);
+		fm.all();
+		
+	}
+	
+}
+class FoodManager{
+	//멤버변수
+	//메뉴에 대한 List<String>, List<Integer>
+	private ArrayList<String> Melist = new ArrayList<String>();  //메뉴
+	private ArrayList<Integer> Molist = new ArrayList<Integer>(); //가격
+	private int allsum;
+	
+	public void printMenu() {
+		System.out.println("---Menu---");
+		System.out.println("1. 햄버거 : 15,000원");
+		System.out.println("2. 피자 : 20,000원");
+		System.out.println("3. 음료 : 2,000원");
+		System.out.println("4. 과자 : 1,000원");
+		System.out.println("5. 사탕 : 500원");
+		System.out.println("6. 프로그램 종료");
+		
+	}
+	
+	public void sale(int menu, int count) {
+		//list 값 추가
+		switch(menu) {
+		case 1: 
+			Melist.add("햄버거"); 
+			Molist.add(15000*count);
+			break;
+		case 2: 
+			Melist.add("피자"); 
+			Molist.add(20000*count);
+			break;
+		case 3: 
+			Melist.add("음료"); 
+			Molist.add(2000*count);
+			break;
+		case 4: 
+			Melist.add("과자");
+			Molist.add(1000*count);
+			break;
+		case 5: 
+			Melist.add("사탕");
+			Molist.add(500*count);
+			break;
+		}
+	}
+	//계산
+	public void all() {
+		for(int i =0; i<Melist.size(); i++) {
+			System.out.println(Melist.get(i)+" : " +Molist.get(i));
+			allsum += Molist.get(i);
+		}
+		System.out.println("총 "+allsum+"원");
+	}
+	
+}

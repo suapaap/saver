@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table연습문제</title>
+    <style>
+        table{
+            border-top: 3px solid black;
+            border-bottom: 3px solid black;            
+            text-align: center;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        thead{
+            border-top: 2px solid black;
+        }
+        th{
+            width: 200px;
+            border-bottom: 2px solid black;            
+        }
+        .num{
+            width: 10%;
+        }
+        .title{
+            width: 50%;
+        }
+        .user{
+            width: 25%;
+        }
+        .date{
+            width: 20%;
+        }
+        tbody>tr:hover{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+        <tr>
+            <th class="num">번호</th>
+            <th class="title">제목</th>
+            <th class="user">작성자</th>
+            <th class="date">날짜</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>5</td>
+            <td>게시글입니다.</td>
+            <td>홍길동</td>
+            <td>2020-11-25</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>예제입니다.</td>
+            <td>홍길동</td>
+            <td>2020-11-25</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>연습문제입니다.</td>
+            <td>홍길동</td>
+            <td>2020-11-25</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>공지사항입니다.</td>
+            <td>홍길동</td>
+            <td>2020-11-25</td>
+        </tr>        
+        <tr>
+            <td>1</td>
+            <td>게시글입니다.</td>
+            <td>홍길동</td>
+            <td>2020-11-25</td>
+        </tr>
+    </tbody>
+    <tfoot>
+    </tfoot>
+    </table>
+</body>
+</html>

@@ -1,0 +1,50 @@
+package product;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Order extends Product {
+	
+	Scanner scan = new Scanner(System.in);
+	ArrayList<Product> list = new ArrayList<>();
+	ArrayList<Product> price = new ArrayList<>();
+	ArrayList<Integer> count = new ArrayList<>();
+	int cnt1 = 0;
+	
+	public void printmenu() {
+		System.out.println("보기 중 하나를 고르시오");
+		System.out.println("1. 제품추가");
+		System.out.println("2. 제품리스트보기");
+		System.out.println("3. 제품주문");
+		System.out.println("4. 주문내역(주문리스트)(총 금액)");
+		System.out.println("5. 프로그램 종료");
+}
+	Product pr = new Product();
+	public void addlist(Scanner scan) {
+	System.out.println("추가할 제품명을 입력하세요");
+	pr.setMenu(scan.next());
+	System.out.println("제품 가격을 입력하세요");
+	pr.setPrice(scan.nextInt());
+	System.out.println("입력이 완료되었습니다 ");
+	list.add(pr);
+	}
+	
+	public void checkList() {
+		System.out.println(list);
+	}
+	
+	public void orderList(Scanner scan) {
+		System.out.println(list+" 중 원하는 제품을 고르세요");
+//		for(int i=0; i<list.size(); i++) {
+//			}
+			String menu1=scan.next();
+			if(pr.getMenu()==menu1) {
+				System.out.println("수량을 입력하세요");
+				int cnt=scan.nextInt();
+				cnt = cnt*pr.getPrice();
+				
+		} else {
+			System.out.println("없는 제품입니다.");
+		}
+	}
+}

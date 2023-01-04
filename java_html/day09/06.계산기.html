@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계산기</title>
+  </head>
+  <body>
+    <h1>계산기 만들기</h1>
+    숫자 2개와 연산자를 입력받아 연산의 결과를 출력 <br />
+    첫번째 숫자를 입력하세요. <input type="text" id="num1" /><br />
+    두번째 숫자를 입력하세요. <input type="text" id="num2" /><br />
+    버튼을 선택해주세요
+    <button type="button" id="plus">+</button>
+    <button type="button" id="bbaegi">-</button>
+    <button type="button" id="gobhagi">*</button>
+    <button type="button" id="nanugi">/</button>
+    <button type="button">계산완료</button>
+    <h3 id="result"></h3>
+
+    <script>
+      //   let result1 = parseInt(document.getElementById("num1").value);
+      //   let result2 = parseInt(document.getElementById("num2").value);
+      document.getElementById("plus").addEventListener("click", function () {
+        let result1 = parseInt(document.getElementById("num1").value);
+        let result2 = parseInt(document.getElementById("num2").value);
+        let len = result1 + result2;
+        document.getElementById("result").innerHTML = len;
+      });
+
+      document.getElementById("bbaegi").addEventListener("click", function () {
+        let result1 = parseInt(document.getElementById("num1").value);
+        let result2 = parseInt(document.getElementById("num2").value);
+        let len = result1 - result2;
+        document.getElementById("result").innerHTML = len;
+      });
+      document.getElementById("gobhagi").addEventListener("click", function () {
+        let result1 = parseInt(document.getElementById("num1").value);
+        let result2 = parseInt(document.getElementById("num2").value);
+        let len = result1 * result2;
+        document.getElementById("result").innerHTML = len;
+      });
+      document.getElementById("nanugi").addEventListener("click", function () {
+        let result1 = parseInt(document.getElementById("num1").value);
+        let result2 = parseInt(document.getElementById("num2").value);
+        let len = result1 / result2;
+        document.getElementById("result").innerHTML = len;
+      });
+      function calc() {
+        
+      }
+    </script>
+  </body>
+</html>

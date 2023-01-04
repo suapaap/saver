@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <img src="/image/car1.jfif" alt="" id="mouseOut" />
+    </div>
+    <script>
+      
+      document.getElementById("mouseOut").addEventListener("mouseover", (e) => {
+        if (e.target.id == "mouseOut") {
+          e.target.src = "/image/car4.jfif";
+        }
+      });
+      document.getElementById("mouseOut").addEventListener("mouseout", (e) => {
+        if (e.target.id == "mouseOut") {
+          e.target.src = "/image/car1.jfif";
+        }
+      });
+    </script>
+  </body>
+</html>

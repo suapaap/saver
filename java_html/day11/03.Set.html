@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set type</title>
+  </head>
+  <body>
+    <ul>
+      <li>
+        set 안의 중복데이터는 허용하지 않음 : 중복 검사 후 존재하는 최초
+        데이터만 저장
+      </li>
+      <li>
+        Set() : 파라미터는 배열을 주로 사용함 => 배열 index와 값을 활용하여
+        집합데이터를 만듬
+      </li>
+      <li>set의 전용 메서드들이 존재함</li>
+      <li>add : 값을 추가 : setName.add(값)</li>
+      <li>size : 크기를 알려줌 : setName.size; //size() X</li>
+      <li>has : 값이 있는지 검사 : setName.has(값) 있으면 true, false</li>
+      <li>delete : 값을 삭제 : setName.delete(값) 성공하면 true, false 반환</li>
+      <li>clear : 모두 삭제 : setName.clear()</li>
+      <li>
+        forEach(v,i,self(set)) : indext == value (Set은 키가 별도로 존재하지
+        않음)
+      </li>
+      <li>const a = new Set([1,2,3]); : 배열 => Set</li>
+      <li>const b = [...a] : Set => 배열</li>
+      <li>
+        setName.keys(), setName.values(), setName.entries() : 리턴타입
+        SetIterator : forEach 순회X
+      </li>
+    </ul>
+    <script>
+      const testSet = new Set(["html", "css", "js"]);
+      console.log(testSet);
+      testSet.add("react");
+      console.log(testSet);
+      console.log(testSet.size);
+      testSet.delete("html");
+      console.log(testSet);
+      console.log(testSet.has("html"));
+      console.log(testSet.has("react"));
+      testSet.forEach(function (value, index, self) {
+        console.log(index, value, self);
+      });
+
+      console.log(`=================`);
+      console.log(testSet.keys());
+      console.log(testSet.values());
+      console.log(testSet.entries());
+      console.log(`=================`);
+
+      for (const iter of testSet.entries()) {
+        //배열 순회
+        iter.forEach(function (v, i, s) {
+          console.log(i, v);
+        });
+      }
+      for (const key of testSet.keys()) {
+        console.log(key);
+      }
+
+      const set = new Set();
+      set.add(10);
+      set.add(1);
+      set.add(9);
+      set.add(6);
+      set.add("test");
+      set.add([1, 2, 3]);
+      let car = {
+        a: 1,
+        b: 2,
+      };
+      set.add(car);
+      set.add({ a: 3, b: 4 });
+      console.log(set);
+
+      //출력문
+      set.forEach(function (value) {
+        console.log("test1: ", value);
+      });
+
+      for(let item of set){
+        console.log("test2: ", item);
+      }
+    </script>
+  </body>
+</html>

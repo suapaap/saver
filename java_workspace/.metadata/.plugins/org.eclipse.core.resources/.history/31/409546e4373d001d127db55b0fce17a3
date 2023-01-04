@@ -1,0 +1,129 @@
+package studentmanager;
+
+import java.util.Scanner;
+
+public class 수강관리프로그램 {
+
+	public static void main(String[] args) {
+		/* 수강관리프로그램 - main
+		 * --메뉴--
+		 * 1. 학생등록
+		 * 2. 학생확인(학생리스트)
+		 * 3. 학생검색
+		 * 4. 수강신청
+		 * 5. 수강철회
+		 * 6. 종료
+		 * */
+		int menu= 0;
+		Scanner scan = new Scanner(System.in);
+		do{
+			System.out.println("----menu----");
+			System.out.println("1. 학생등록");
+			System.out.println("2. 학생리스트");
+			System.out.println("3. 학생검색");
+			System.out.println("4. 수강신청");
+			System.out.println("5. 수강철회");
+			System.out.println("6. 종료");
+			menu = scan.nextInt();
+			
+		 switch(menu){//미완성  
+		case 1: 
+			System.out.println("학생을 등록하겠습니다.");
+			
+			break;
+		case 2: 
+			System.out.println("2. 학생정보입니다."); 
+			
+			break;
+		case 3: 
+			System.out.println("3. 검색할 학생의 정보를 입력해주세요"); 
+			
+			break;
+		case 4: 
+			System.out.println("4. 원하시는 과목을 입력해주세요"); 
+			
+			break;
+		case 5: 
+			System.out.println("5. 취소하시는 과목을 입력해주세요"); 
+			
+			break;
+		case 6: 
+			System.out.println("6. 메뉴를 종료합니다."); 
+			
+			break;
+		default : 
+			System.out.println("정해지지 않은 메뉴입니다");
+		
+		
+		 	}
+		}
+		while(menu!=6); 
+		System.out.println("종료!");
+		scan.close();
+	}
+}
+	
+	/* 2.과목클래스(별도생성)
+	 * 과목클래스 : 한과목의 정보를 나타내는 클래스
+	 * 멤버변수 : 과목코드, 과목명, 학점, 교수명
+	 * 멤버메서드 
+	 * getter/setter, toString()
+	 * 생성자
+	 * */
+	class Subject {
+		private int subcode;
+		private String subname;
+		private int subscore;
+		private String subteacher;
+		
+		
+		public Subject() {}
+
+		public Subject(int subcode, String subname, int subscore, String subteacher) {
+			this.subcode = subcode;
+			this.subname = subname;
+			this.subscore = subscore;
+			this.subteacher = subteacher;
+		}	
+	}
+	
+	class Student{
+		private int schoolnumber;
+		private String stuname;
+		private int stukrnumber;
+		private String stucls;
+		private String stusubject;
+		
+		public Student(int schoolnumber, String stuname, int stukrnumber, String stucls, String stusubject) {
+			super();
+			this.schoolnumber = schoolnumber;
+			this.stuname = stuname;
+			this.stukrnumber = stukrnumber;
+			this.stucls = stucls;
+			this.stusubject = stusubject;
+		}
+		
+		
+	}
+	/* 3.학생클래스(별도생성)
+	 * 학생클래스 : 한 학생의 정보를 나타내는 클래스
+	 * 멤버변수 : 학번, 이름, 주민번호, 학부,학과, 수강과목s(과목클래스 배열생성)
+	 * 멤버메서드 
+	 * getter/setter , toString() or print() - 한 학생의 정보출력
+	 * 수강과목추가 - 배열이 다 찼다면 늘려주기
+	 * 수강과목삭제
+	 * 생성자
+	 * */
+	
+	
+	/* 4.Manager클래스에서 검색, 추가, 삭제, 메서드 구현, 출력 (학생추가/학생객체생성/검색/리스트)
+	 * */
+	
+	/*1.program interface
+	 * 학생리스트 출력
+	 * 학생등록
+	 * 학생검색
+	 * 수강신청
+	 * 수강철회
+	 * */
+	

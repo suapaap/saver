@@ -1,0 +1,18 @@
+package day10;
+
+import java.util.HashSet;
+
+public class Set01 {
+
+	public static void main(String[] args) {
+		// Set은 순서보장X, 중복X
+		//HashSet 가장 많이 사용
+		HashSet<String> set = new HashSet<String>();
+		set.add("apple");
+		set.add("toy");
+		set.add("apple");
+		set.add("peach");
+		System.out.println(set);
+	}
+
+}

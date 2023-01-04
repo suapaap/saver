@@ -1,0 +1,20 @@
+package day11;
+
+import java.util.HashMap;
+
+public class Map02 {
+
+	public static void main(String[] args) {
+		// key/value 
+		// set으로 변환 후 출력
+		HashMap<String, Integer> map = new HashMap<>();
+		map.put("국어", 89);
+		map.put("영어", 91);
+		map.put("수학", 74);
+		System.out.println("국어: "+map.get("국어"));
+		System.out.println("국어: "+map.get("영어"));
+		System.out.println("국어: "+map.get("수학"));
+
+	}
+
+}

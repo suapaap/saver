@@ -1,0 +1,68 @@
+package day10;
+
+public class Lotto_maker {
+//	Scanner scan = new Scanner(System.in);
+	
+	private int createLottoAuto[] = new int[7];
+	private int insertLotto;
+	private int checkLotto;
+	private int printLotto;
+	private int lottoCount;
+
+	
+
+	public void createLottoAuto() {
+	for(int i=0; i<createLottoAuto.length; i++) {
+		lottoCount = (int)(Math.random()*45)+1;
+		i = lottoCount;
+		System.out.println(createLottoAuto[i]);
+		}
+	}
+
+
+	public int[] getCreateLottoAuto() {
+		return createLottoAuto;
+	}
+
+
+	public void setCreateLottoAuto(int[] createLottoAuto) {
+		this.createLottoAuto = createLottoAuto;
+	}
+
+
+	public int getInsertLotto() {
+		return insertLotto;
+	}
+
+
+	public void setInsertLotto(int insertLotto) {
+		this.insertLotto = insertLotto;
+	}
+
+
+	public int getCheckLotto() {
+		return checkLotto;
+	}
+
+
+	public void setCheckLotto(int checkLotto) {
+		this.checkLotto = checkLotto;
+	}
+
+
+	public int getPrintLotto() {
+		return printLotto;
+	}
+
+
+	public void setPrintLotto(int printLotto) {
+		this.printLotto = printLotto;
+	}
+
+
+	public int getLottoCount() {
+		return lottoCount;
+	}
+	
+	
+}

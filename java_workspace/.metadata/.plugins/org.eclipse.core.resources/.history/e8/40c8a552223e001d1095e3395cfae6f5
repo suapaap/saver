@@ -1,0 +1,48 @@
+package day10;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class List01 {
+
+	public static void main(String[] args) {
+		/* 하루 일과를 저장하는 list 생성<String>
+		 * */
+		List<String> list = new ArrayList<String>();
+//		List<String> list2 = new ArrayList<String>();
+//		List<String> list3 = new ArrayList<String>();
+		list.add("07시 기상");
+		list.add("07시 30분 와이프랑 수아 처갓집 보내기");
+		list.add("08시 아침 시리얼먹기");
+		list.add("08시 10분 학원 갈 준비");
+		list.add("08시 40분경 버스정류장 출발");
+		list.add("09시경 버스탑승");
+		list.add("09시30분경 학원도착");
+		list.add("09시30분경 오전수업 시작");
+		list.add("13시20분 점심식사");
+		list.add("14시20분 오후수업 시작");
+		list.add("18시20분경 학원수업 종료");
+		list.add("19시경 집도착");
+		list.add("19시30분경 수아 저녁먹이기, 수아 씻기기");
+		list.add("20시30분경 씻기");
+		list.add("21시경 수아 재우기");
+		list.add("22시30분경 와이프랑 담소나누기 및 개인시간");
+		list.add("00시경 취침");
+		
+		Iterator<String> is = list.iterator();
+		while(is.hasNext()) {
+			String tmp = is.next();
+			System.out.println(tmp+" ");
+		}
+//		System.out.println("나의 평균하루 오전일과");
+//		System.out.println(list);
+//		System.out.println();
+//		System.out.println("나의 평균하루 오후일과");
+//		System.out.println(list2);
+//		System.out.println();
+//		System.out.println("나의 평균하루 야간일과");
+//		System.out.println(list3);
+	}
+
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로또 번호 생성</title>
+  </head>
+  <body>
+    <h1>
+      1~45까지 중복되지 않은 숫자 6개가 랜덤으로 추출, 순서대로 출력 Set 객체
+      사용
+    </h1>
+    <button type="button" onclick="random()">랜덤번호 출력</button>
+    랜덤번호 :
+    <h1 id="printNum"></h1>
+    <button type="button" onclick="random2()">내 번호 출력</button>
+    내 번호 :
+    <h1 id="printNum2"></h1>
+    <button type="button" onclick="rank()">당첨 확인</button>
+    당첨 확인 :
+    <h2 id="result"></h2>
+    <script>
+      function random() {
+        const set = new Set();
+        let arr = [];
+        while (set.size < 6) {
+          set.add(Math.floor(Math.random() * 45) + 1);
+        }
+        set.forEach(function (v) {
+          arr.push(v);
+        });
+        console.log(
+          arr.sort(function (a, b) {
+            return a - b;
+          })
+        );
+        document.getElementById("printNum").innerHTML = arr;
+      }
+      function random2() {
+        const set = new Set();
+        let arr2 = [];
+        while (set.size < 6) {
+          set.add(Math.floor(Math.random() * 45) + 1);
+        }
+        set.forEach(function (v) {
+          arr2.push(v);
+        });
+
+        console.log(
+          arr2.sort(function (a, b) {
+            return a - b;
+          })
+        );
+        document.getElementById("printNum2").innerHTML = arr2;
+      }
+
+      function rank() {
+        let cnt = 0;
+        for (const a of arr) {
+          for (const b of arr2) {
+            if (a == b) {
+              cnt++;
+            }
+          }
+        }
+        let print = "";
+        switch (cnt) {
+          case 6:
+            print = `축 1등당첨!`;
+            break;
+          case 5:
+            for (let i = 0; i < arr.size; i++) {
+              if (arr[i] == arr2[arr2.size]) {
+                print = `축 2등당첨!`;
+              } else {
+                print = `축 3등당첨!`;
+              }
+            }
+            break;
+          case 4:
+            print = `축 4등당첨!`;
+            break;
+          case 3:
+            print = `축 5등당첨!`;
+            break;
+        }
+        document.getElementById("result").innerText = print;
+      }
+    </script>
+  </body>
+</html>

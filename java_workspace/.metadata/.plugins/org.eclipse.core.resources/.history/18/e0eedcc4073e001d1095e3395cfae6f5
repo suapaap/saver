@@ -1,0 +1,92 @@
+package day10;
+
+import java.util.Scanner;
+
+public class T_LottoManager implements T_LottoProgram {
+	//당첨번호 List 배열 추가
+	T_LottoE lotto[] = new T_LottoE[5];  // 당첨번호 List
+	T_Lotto user = new T_Lotto(); // 사용자 번호
+	int lCount = 0; // 당첨번호 생성 개수
+	
+	public void printMenu() {
+		
+	}
+	
+	@Override
+	public void createLotto(Scanner scan) {
+		System.out.println("로또번호 입력(중복x,숫자6개,1~45범위");
+		int[] tmp= new int[6]; // 입력받을 임시 배열
+		for(int i=0; i<tmp.length; i++) {
+			tmp[i]=scan.nextInt();  // 사용자 배열에 로또번호 입력받기
+			}
+		//중복체크 후 insert
+		if(isDuplicated(tmp)) {
+			System.out.println("오류발생 ! 취소합니다.");
+		} else {
+			user.insertNumber(tmp);
+			printString("로또번호:" + user);			
+		}			
+	}
+	
+	//수동으로 입력한 배열안에 같은수가 포함되어있는지 체크=> isDuplicated(int []arr)
+	public boolean isDuplicated(int[] arr) {
+		for(int i=0; i<arr.length; i++) {
+			for(int j=i+1; j<arr.length; j++) {
+				if(arr[i]==arr[j]) {
+					return true;
+				}
+			}
+		}
+		for(int i=0; i<arr.length; i++) {
+			if(arr[i]<0 || arr[i]>45) {
+				return true; // insert 오류발생
+			}
+		} return false; // insert 진행
+	}
+	
+	public void printString(String str) {
+		System.out.println("----------");
+		System.out.println(str);
+	}
+	
+	@Override
+	public void createLottoAuto() {
+		user.randomLotto();
+		printString("로또번호 :"+user);
+	}
+	
+	@Override
+	public void insertLotto(Scanner scan) {
+		System.out.println("당첨번호 입력(중복x,숫자7개,1~45범위, 보너스번호는 마지막 입력");
+		// 당첨번호 수동 입력
+		int[] tmp= new int[7];
+		for(int i=0; i<tmp.length; i++) {
+			tmp[i]=scan.nextInt();
+		}
+		// 중복 확인 후 중복발생이 안되었을때 객체 생성 후 insert 호출
+		if(isDuplicated(tmp)) {
+			System.out.println("오류발생 취소!");
+		} else {
+			T_LottoE tmpLotto = new T_LottoE ();
+			tmpLotto.insertNumber(tmp);
+			lotto[lCount] = tmpLotto;
+			// lcount++;
+			lCount++;
+			// 당첨번호 찍기
+			printString("당첨번호: "+tmpLotto);
+		}
+	}
+	@Override
+	public void checkLotto() {
+		// 1. 일치하는 개수 count 선언
+		// 2. 마지막에 저장된 당첨번호를 객체로 가져와야함
+		// 3. for문으로 일치하는 개수 체크
+		// 4. 랭킹확인 sysout으로 바로 당첨 찍기
+		
+	}
+	@Override
+	public void printLotto() {
+				
+	}
+	
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charcom="UTF(c" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>baseball</title>
+  </head>
+  <body>
+    <h1>
+      컴퓨터가 0~9의 중복되지 않는 정수 3개를 랜덤으로 출제하면 맞추는 게임
+    </h1>
+    <h2>게임 규칙</h2>
+    <p>
+      1. 세자리의 숫자는 각 자리수를 갖고 서로 중복되지 않는다.<br />
+      2. 각 자리수와 입력한 숫자의 자리수가 동일하면 1 Strike<br />
+      3. 입력한 숫자가 포함되어 있으나 자리수가 동일하지 않으면 1 Ball<br />
+      4. 입력한 숫자가 전혀 포함되어 있지 않으면 Out<br />
+      5. 3스트라이크면 1게임 종료<br />
+    </p>
+    <button type="button" id="start">게임 시작</button> <br />
+    <h1 id="starter"></h1>
+    <input type="number" id="userNum" placeholder="숫자를 입력하세요" /><br />
+    <button type="button" id="finish">제출</button> <br />
+    <h3 id="resultArea"></h3>
+
+    <script>
+      document.getElementById("start").addEventListener("click", createRandom);
+
+      let comArr = [];
+      function createRandom() {
+        const com = new Set();
+        comArr = [];
+        while (com.size < 3) {
+          com.add(Math.floor(Math.random() * 9));
+        }
+        for (const a of com) {
+          comArr.push(a);
+        }
+        console.log(comArr);
+        document.getElementById("starter").innerText = `게임이 시작되었습니다`;
+      }
+
+      parseInt(
+        document.getElementById("finish").addEventListener("click", result)
+      );
+      //   const userArr = [];
+      function result() {
+        let num = document.getElementById("userNum").value;
+        const userArr = num.split("");
+        // for (const b of user) {
+        //   userArr.push(b);
+        // }
+        console.log(userArr);
+        error(userArr);
+        console.log(error(userArr));
+
+        if (error(userArr)) {
+          let strike = 0;
+          let ball = 0;
+          for (i = 0; i < comArr.length; i++) {
+            for (j = 0; j < userArr.length; j++) {
+              if (comArr[i] == userArr[j]) {
+                if (i == j) {
+                  strike++;
+                } else {
+                  ball++;
+                }
+              }
+            }
+          }
+
+          if (strike == 0 && ball == 0) {
+            document.getElementById("resultArea").innerText = `Out!!`;
+          } else if (strike == 3) {
+            document.getElementById("resultArea").innerText = `게임종료 승리!!`;
+          } else {
+            document.getElementById(
+              "resultArea"
+            ).innerHTML = ` Strike :${strike} <br> Ball :${ball} `;
+          }
+        } else {
+          // document.getElementById("starter").innerText = ;
+          document.getElementById("resultArea").innerText =
+            "잘못된 입력값입니다";
+        }
+
+        document.getElementById("userNum").focus();
+      }
+
+      function error(num) {
+        if (num.length > 3) {
+          return false;
+        }
+        if (num.length < 3) {
+          return false;
+        }
+        const s = new Set(num);
+        if (s.size < 3) {
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계산기</title>
+    <style>
+        button{
+            border: 1px solid black;
+            margin: 10px 10px;
+            cursor: pointer;
+        }
+        .container{
+            box-sizing: border-box;
+            border:  1px solid black;
+            width: 200px;
+            background-color: wheat;
+            text-align: center;
+            grid-template-columns: repeat(4,65px);
+        }
+        .re{
+            background-color: wheat;
+            border: 0px solid wheat;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>계산기 만들기</h1>
+    숫자 2개와 연산자를 입력받아 연산의 결과를 출력 <br />
+    버튼을 눌러주세요.
+    <div class="container">
+        <input type="text" class="re" id="num" placeholder="연산값" /><br />
+        <input type="text" class="re" id="result" placeholder="값" />
+        <button type="button" onclick="reset()">C/AC</button><br>
+        <button type="button" value="7" onclick="number(7)">7</button>
+        <button type="button" value="8" onclick="number(8)">8</button>
+        <button type="button" value="9" onclick="number(9)">9</button>
+        <button type="button" onclick="number('+')">+</button><br />
+        <button type="button" value="4" onclick="number(4)">4</button>
+        <button type="button" value="5" onclick="number(5)">5</button>
+        <button type="button" value="6" onclick="number(6)">6</button>
+        <button type="button" onclick="number('-')">-</button><br />
+        <button type="button" value="1" onclick="number(1)">1</button>
+        <button type="button" value="2" onclick="number(2)">2</button>
+        <button type="button" value="3" onclick="number(3)">3</button>
+        <button type="button" onclick="number('*')">*</button><br />
+        <button type="button" onclick="number('/')">/</button>
+        <button type="button" onclick="number('.')">.</button>
+        <button type="button" onclick="calc()">정답 확인</button><br>
+    </div>
+
+    <script>
+      function number(char) {
+        let num = document.getElementById("num");
+        num.value = num.value + char;
+      }
+
+      function calc() {
+        let num = document.getElementById("num");
+        let result = eval(num.value);
+        document.getElementById("result").value = result;
+      }
+
+      function reset() {
+        document.getElementById("num").value = "";
+        document.getElementById("result").value = "";
+      }
+    </script>
+  </body>
+</html>

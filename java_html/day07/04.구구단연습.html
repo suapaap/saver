@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="gugu">
+    <button type="button" id="guguBtn" onclick="gugudan()">입력</button>
+    <h3 id="show"></h3>
+    <script>
+        function gugudan(){
+            let num1 = document.getElementById('gugu').value;
+            // let dan = parseInt(dan);
+            let num = 1;
+            for(num=1; num<=9; num++){
+                document.getElementById('show').innerHTML = `${num1}*${num}=${num1*num} <br> `;
+                console.log(num1*num);
+            }
+        }
+
+    </script>
+</body>
+</html>

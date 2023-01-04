@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <style>
+        body{
+            text-align: center;
+           vertical-align: middle;
+           text-decoration: none;
+           
+        }
+        a{
+            text-decoration: none;
+        }
+        h1{
+           border: 5px double black;
+           font-size: 3em;
+           display: inline;
+           
+        }
+        ul{
+            list-style: none;
+            border: 1px solid black;
+            font-size: 2em;            
+        }
+        li{
+            display: inline;                      
+        }
+
+    </style>
+</head>
+<body>
+    <h1><a href="https://flight.naver.com/" target="_blank">Go World</a></h1>
+    <ul type:desc>
+        <li><a id="travel" class="links" onclick="click(home)">home</a></li>
+        <li><a id="seoul" class="links">서울</a></li>
+        <li><a id="paris" class="links">파리</a></li>
+        <li><a id="singapol" class="links">싱가포르</a></li>
+        <li><a id="dublin" class="links">두블린</a></li>
+    </ul>
+    <div class="image">
+        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA5MjFfOTUg%2FMDAxNjYzNzQ5MDI3MDU0.NfLZtOJOjDX7Venr6UKeLRIOUOW_oY7hAMToAU3DG5wg.vQ0FHpNFypfY7i6CPiovvf6BsidPz035520yyYmZnq4g.JPEG.sujin0708%2F20220910_101124.jpg&type=sc960_832" alt="">
+    </div> 
+    <script>
+        function click(v){
+            let idVal = v.id;
+            document.getElementById('cityImg').src=`/image/${idVal}.jpg`;
+        }
+
+    </script>
+</body>
+</html>

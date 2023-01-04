@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 생성</title>
+  </head>
+  <body>
+    <h1>
+      User class 생성(name, age) 이름, 나이 출력 나이가 20대 미만이면 미성년자 /
+      성인
+    </h1>
+    <script>
+      class User {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+
+        print() {
+          if (this.age < 20) {
+            return "청소년입니다.";
+          } else {
+            return "성인입니다.";
+          }
+        }
+      }
+
+      let a = new User("lee", 15);
+      let c = new User("kim", 30);
+      console.log(a.name, a.age, a.print());
+      console.log(c.name, c.age, c.print());
+      // 이름, 생년월일, 성인/미성년자
+
+      class User2 {
+        constructor(name, birth) {
+          this.name = name;
+          this.birth = birth;
+        }
+        age() {
+          let birthday = new Date(this.birth);
+          let todayYear = new Date().getFullYear();
+          return todayYear - birthday.getFullYear();
+        }
+        print() {
+          let age = this.age();
+          if (age < 20) {
+            console.log("미성년자");
+          } else {
+            console.log("성인");
+          }
+        }
+      }
+      let b = new User2("kim", "93-06-27");
+      console.log(b.name, b.age());
+    </script>
+  </body>
+</html>

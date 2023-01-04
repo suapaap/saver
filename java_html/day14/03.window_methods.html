@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>윈도우 전역 객체 소속의 메서드</h1>
+    <ul>
+      <li>open(), close()..: 윈도우 창관련 메서드</li>
+      <li>prompt(), alert(), confirm() : 사용자 interface 메서드</li>
+      <li>setTimeout(), setInterval() : 실행시간 지정 메서드</li>
+      <li>window.open('url','window name','options(size,scroll ...)')</li>
+    </ul>
+    <button type="button" onclick="openWindow()">열기</button>
+    <button type="button" onclick="closeWindow()">닫기</button>
+    <button type="button" onclick="checkWindow()">체크</button>
+    <button type="button" onclick="openAlert()">긴급!!</button>
+    <button type="button" onclick="openPrompt()">자막</button>
+    <button type="button" onclick="openConfirm()">컨펌</button>
+    <h2 id="msg"></h2>
+    <script>
+      function openAlert() {
+        window.alert("이상이상!! 비상비상!!");
+      }
+
+      function openPrompt() {
+        let info = window.prompt(
+          "얼마를 송금하시겠습니까?",
+          "금액을 입력하세요"
+        );
+        if (info != null) {
+          document.getElementById("msg").innerText = info;
+        }
+      }
+
+      function openConfirm() {
+        let choice = window.confirm("송금하시겠습니까?");
+        if (choice == true) {
+          document.getElementById("msg").innerText = "송금완료";
+        } else {
+          document.getElementById("msg").innerText = "송금실패";
+        }
+      }
+
+      let myWin;
+      function openWindow() {
+        myWin = window.open("", "myWin", "width =400; height=400");
+      }
+
+      function closeWindow() {
+        if (myWin) {
+          myWin.close();
+        }
+      }
+      function checkWindow() {
+        if (!myWin) {
+          document.getElementById("msg").innerText =
+            "myWin한번도 열리지 않았습니다.";
+        } else {
+          if (myWin.closed) {
+            document.getElementById("msg").innerText = `myWin가 닫혔습니다.`;
+          } else {
+            document.getElementById(
+              "msg"
+            ).innerText = `myWin가 닫히지 않았습니다.`;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

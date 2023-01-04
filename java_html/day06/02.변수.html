@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수</title>
+</head>
+<body>
+    <h1>스크립트 변수</h1>
+    <h3>
+        형식 제한이 없음. 
+    </h3>
+    <h3>
+        변수를 선언할 때 사용하는 키워드 : var, let, const
+    </h3>
+    <h3>
+        변수 : 선언, 초기값 var <br>
+        var : 재선언 가능. 재할당
+        let, const : 재선언 불가능 
+    </h3>
+    <h3>
+        let은 재선언 불가능, 재할당은 가능함 <br>
+        const는 : 재선언,재할당 불가능
+    </h3>
+    <script>
+        var name = "kim";
+        console.log(name);
+        var name = "hong";
+        console.log(name);
+        var name = "1234";
+        console.log(name);
+
+        let letName = "kim"
+        console.log(letName);
+        letName = "hong"
+        console.log(letName);
+
+        const constName = "kim";
+        console.log(constName);
+        // constName = "hong";
+        // console.log(constName);
+    </script>
+    <script>
+        let age = 23;
+        let addr = 'seoul';
+        let hobby = 'baseball';
+        let favor = 'coffee';
+
+        console.log("name : "+letName);
+        console.log("age : "+age);
+        console.log("address : "+addr);
+        console.log("hobby : "+hobby);
+        console.log("favor : "+favor);
+
+    </script>
+</body>
+</html>

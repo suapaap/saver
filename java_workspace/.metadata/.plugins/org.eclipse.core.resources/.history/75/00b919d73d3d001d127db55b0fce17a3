@@ -1,0 +1,95 @@
+package studentmanager;
+
+public class Student {
+	/* 3.학생클래스(별도생성)
+	 * 학생클래스 : 한 학생의 정보를 나타내는 클래스
+	 * 멤버변수 : 학번, 이름, 주민번호, 학부,학과, 수강과목s(과목클래스 배열생성) , 수강번지
+	 * 멤버메서드 
+	 * getter/setter , toString() or print() - 한 학생의 정보출력
+	 * 수강과목추가 - 배열이 다 찼다면 늘려주기
+	 * 수강과목삭제
+	 * 생성자
+	 * */
+		private int stuNumber;
+		private String stuName;
+		private int stuKrnumber;
+		private String faculty;
+		private String stuCls;
+		private Subject[] subjectList;
+		private int stusubCount;
+		
+		
+		public void stuPrint() {
+			System.out.println("---학생정보---");
+			System.out.println("학번 : "+stuNumber);
+			System.out.println("학생명 : "+stuName);
+			System.out.println("주민번호 : "+stuKrnumber);
+			System.out.println("학부 :("+faculty+"), 학과 :("+stuCls+")");
+			System.out.println("수강과목 :"+subjectList);
+			System.out.println("수강번지 :"+stusubCount);
+		}
+		
+		@Override
+		public String toString() {
+			return "학생정보 [학번 :" + stuNumber + ", 이름 :" + stuName + ", 주민번호 :" + stuKrnumber
+					+ ", 학부 :" + faculty + ", 학과 :" + stuCls + ", 수강과목 :" + subjectList + ", 수강과목수 :"
+					+ stusubCount + "]";
+		}
+		//생성자
+		public Student() {}
+
+		public Student(int stuNumber, String stuName, int stuKrnumber, String faculty, String stuCls) {
+			super();
+			this.stuNumber = stuNumber;
+			this.stuName = stuName;
+			this.stuKrnumber = stuKrnumber;
+			this.faculty = faculty;
+			this.stuCls = stuCls;
+			subjectList = new Subject[5];
+		}
+
+		public int getStuNumber() {
+			return stuNumber;
+		}
+
+		public void setStuNumber(int stuNumber) {
+			this.stuNumber = stuNumber;
+		}
+
+		public String getStuName() {
+			return stuName;
+		}
+
+		public void setStuName(String stuName) {
+			this.stuName = stuName;
+		}
+
+		public int getStuKrnumber() {
+			return stuKrnumber;
+		}
+
+		public void setStuKrnumber(int stuKrnumber) {
+			this.stuKrnumber = stuKrnumber;
+		}
+
+		public String getFaculty() {
+			return faculty;
+		}
+
+		public void setFaculty(String faculty) {
+			this.faculty = faculty;
+		}
+
+		public String getStuCls() {
+			return stuCls;
+		}
+
+		public void setStuCls(String stuCls) {
+			this.stuCls = stuCls;
+		}
+
+		public Subject[] getSubjectList() {
+			return subjectList;
+		}
+		
+}

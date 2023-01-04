@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클래스</title>
+  </head>
+  <body>
+    <h1>class는 객체를 생성하기 위한 템플릿</h1>
+
+    <script>
+      class Car {
+        constructor(name, year, sex) {
+          this.name = name;
+          this.year = year;
+          this.model = "";
+          this.sex = sex;
+        }
+      }
+      const myCar1 = new Car("포르쉐", 2022, "man");
+      myCar1.sex = "man";
+      const myCar2 = new Car("그랜저", 2021);
+      let myCar3 = new Car();
+      myCar3.name = "소나타";
+      myCar3.year = 2020;
+      console.log(myCar1);
+      console.log(myCar2);
+      console.log(myCar3);
+      console.log(myCar1.name, myCar1.year);
+      console.log(myCar2.name, myCar2.year);
+      console.log(myCar3.name, myCar3.year);
+
+      let myCar4 = new Car("셀토스", 2020);
+      myCar4.model = "Gasolin";
+      console.log(myCar4);
+      console.log(myCar4.name, myCar4.year, myCar4.model);
+
+      class Rectangle {
+        constructor(height, width) {
+          this.height = height;
+          this.width = width;
+        }
+        //method
+        calcArea() {
+          return this.height * this.width;
+        }
+
+        //getter
+        get area() {
+          return this.height * this.width;
+        }
+
+        get area1() {
+          return this.height * this.width;
+        }
+      }
+
+      const square = new Rectangle(10, 10);
+      console.log(square.area);
+      console.log(square.calcArea());
+      console.log(square.area1);
+      console.log(`-----------------------`);
+
+      class Point {
+        constructor(x, y) {
+          this.x = x;
+          this.y = y;
+        }
+        str() {
+          return `(${this.x},${this.y})`;
+        }
+      }
+
+      const xy = new Point(5, 5);
+      console.log(xy.str());
+      console.log(`------상속----------`);
+
+      class Animal {
+        constructor(name) {
+          this.name = name;
+        }
+
+        speak() {
+          console.log(`${this.name} 울음소리`);
+        }
+      }
+
+      class Dog extends Animal {
+        constructor(name) {
+          //상속받은 클래스에 생성자가 있다면 super()를 먼저 호출해야함
+          super(name);
+        }
+
+        speak() {
+          super.speak();
+          console.log("멍멍");
+        }
+      }
+
+      let d = new Dog("뽀삐");
+      d.speak();
+
+      class Cat extends Animal {
+        #name = "";
+        constructor(name) {
+          super(name);
+          this.#name = name;
+        }
+        set(name) {
+          this.#name = name;
+        }
+
+        speak() {
+          super.speak();
+          console.log(`${this.#name}야옹`);
+        }
+      }
+      let f = new Cat("스핑크스고양이");
+
+      f.speak();
+    </script>
+  </body>
+</html>

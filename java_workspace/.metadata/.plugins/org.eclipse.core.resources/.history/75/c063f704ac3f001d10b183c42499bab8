@@ -1,0 +1,79 @@
+package Word;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class WordManager {
+
+	private ArrayList<String> words = new ArrayList<>();
+	private ArrayList<String> means = new ArrayList<>();
+	Scanner scan = new Scanner(System.in);
+	public ArrayList<String> getWords() {
+		return words;
+	}
+
+	public void setWords(ArrayList<String> words) {
+		this.words = words;
+	}
+
+	/* 단어장 프로그램 작성
+	 * 1. 단어등록
+	 * 2. 단어검색
+	 * 3. 단어수정
+	 * 4. 단어출력
+	 * 5. 종료
+	 * */
+	//1. 단어등록 메서드
+	// void 매개변수 Scanner 메서드명 wordcreate
+	public void wordCreate(Scanner scan) {
+		System.out.println("등록할 단어를 입력하세요");
+		words.add(scan.next());
+		System.out.println("단어의 뜻을 입력하세요");
+		means.add(scan.next());		
+	}
+	
+	//2. 단어검색 메서드
+	// void 매개변수 String serch 메서드명 wordSerch
+	public void wordSerch(Scanner scan) {
+		System.out.println("검색할 단어를 입력하세요");
+		String serch=scan.next();
+		for(int i=0; i<words.size();i++) {
+			if(words.get(i).equals(serch)) {
+				System.out.println("찾으신 단어는"+words.get(i)+":"+means.get(i)+"입니다.");
+			}
+		}
+	}
+	//3. 단어수정 메서드
+	// void 매개변수 fix for문if문 메서드명 wordFix
+	public void wordFix(Scanner scan) {
+		System.out.println("수정할 단어를 입력하세요");
+		String word = scan.next();
+		System.out.println("수정값을 입력하세요");
+		String fix = scan.next();
+		for(int i=0; i<words.size(); i++) {
+			if(words.get(i).equals(word)) {
+				words.set(i, fix);
+			}
+		}
+		System.out.println("수정완료");
+	}
+	//4. 단어출력 메서드
+	// void 매개변수 x 메서드명 wordPrint
+	public void wordPrint() {
+		for(int i=0; i<words.size();i++) {
+			System.out.println(words.get(i)+" : "+means.get(i));
+		}
+		if(words.equals(null)) {
+			System.out.println("값이 없습니다.");
+		}
+	}
+	//5. 메뉴출력 메서드
+	public void menuPrint() {
+		System.out.println("---메뉴---");
+		System.out.println("1. 단어등록");
+		System.out.println("2. 단어검색");
+		System.out.println("3. 단어수정");
+		System.out.println("4. 단어출력");
+		System.out.println("5. 종료");
+	}
+}

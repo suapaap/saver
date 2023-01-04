@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>주어진 데이터를 순환하여 원하는 조건에 맞는 정보를 추출</h1>
+    <ol>
+      <li>데이터의 환율 자료에서 통화 이름만 가져와 새로운 배열에 출력</li>
+      <li>환율의 각 통화 변화율 중 가장 큰 변화를 보인 객체의 정보 출력</li>
+      <li>
+        금시세의 포인트 정보를 분석하여 전일(yesterday)의 포인트값을 추정하여
+        출력
+      </li>
+    </ol>
+    <script src="06.exchange.js"></script>
+    <script>
+      //1번문제
+      const valueArr = [];
+      keyframe = "name";
+      money.persent.forEach((e, i, arr) => {
+        //e값은 object
+        valueArr.push(e[keyframe]);
+      });
+      console.log(valueArr);
+      //2번문제
+      const name = money.persent.map((e) => e.down);
+      const max = Math.max(...name);
+      let a = money.persent.forEach((e) => {
+        if (max == e.down) {
+          console.log(e);
+        }
+      });
+      //3번문제
+      const yester = money.gold.map(
+        (e) => `${e.name}(yesterday) : ${Math.floor(e.point + e.updown)}`
+      );
+      console.log(yester);
+    </script>
+  </body>
+</html>

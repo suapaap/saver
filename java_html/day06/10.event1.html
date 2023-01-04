@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+    <fieldset>
+        <legend>로그인</legend>
+        ID : <input type="text" id="userid">
+        PW : <input type="text" id="userpw">
+        Birth : <input type="date" id="birth">
+        Pin : <input type="number" id="pin">
+        <button type="button" onclick="sendEvent()"> 전송 </button>
+        <button type="button" onclick="clickEvent()"> 리스트 </button>
+        
+    </fieldset>
+</form>
+<h3 id="info"></h3>
+<ol id="ol"></ol>
+<script>
+    function sendEvent(){
+        let userid = document.getElementById('userid').value;
+        let userpw = document.getElementById('userpw').value;
+        let birth = document.getElementById('birth').value;
+        let pin = document.getElementById('pin').value;
+        let  h3= document.getElementById('info');
+
+        h3.innerText= `${typeof userid} : ${userid}`;
+        h3.innerText+= `${typeof userpw} : ${userpw}`;
+        h3.innerText+= `${typeof birth} : ${birth}`;
+        h3.innerText+= `${typeof pin} : ${pin}`;
+    }
+
+    function clickEvent() {
+        let userid = document.getElementById('userid').value;
+        let userpw = document.getElementById('userpw').value;
+        let birth = document.getElementById('birth').value;
+        let pin = document.getElementById('pin').value;
+        birth= new Date(birth);
+        pin = parseInt(pin);
+        let ol = document.getElementById('ol');
+        console.log(birth);
+        console.log(typeof birth);
+        // console.log(pin);        
+        // console.log(typeof pin);
+        ol.innerHTML = `<li> ${typeof userid} : ${userid} </li>`;
+        ol.innerHTML += `<li> ${typeof userpw} : ${userpw} </li>`;
+        ol.innerHTML += `<li> ${typeof birth} : ${birth} </li>`;
+        ol.innerHTML += `<li> ${typeof pin} : ${pin} </li>`;
+        // let str = `<li> ${typeof userid} : ${userid} </li><li> ${typeof userpw} : ${userpw}
+        //     </li><li> ${typeof birth} : ${birth} </li><li> ${typeof pin} : ${pin} </li>`;
+        // ol.innerHTML = str;
+    }
+</script>    
+</body>
+</html>

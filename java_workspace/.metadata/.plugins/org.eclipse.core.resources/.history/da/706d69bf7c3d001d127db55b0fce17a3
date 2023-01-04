@@ -1,0 +1,52 @@
+package day10;
+
+import java.util.Scanner;
+
+public class T_LottoManager implements T_LottoProgram {
+	//당첨번호 List 배열 추가
+	T_LottoE lotto[] = new T_LottoE[5];  // 당첨번호 List
+	T_Lotto user = new T_Lotto(); // 사용자 번호
+	int lCount = 0; // 당첨번호 생성 개수
+	
+	public void printMenu() {
+		
+	}
+	
+	@Override
+	public void createLotto(Scanner scan) {
+		System.out.println("로또번호 입력하세요(중복x,숫자6개,1~45범위");
+		int[] tmp= new int[6]; // 입력받을 임시 배열
+		for(int i=0; i<tmp.length; i++) {
+			tmp[i]=scan.nextInt();  // 사용자 배열에 로또번호 입력받기
+		}
+		user.insertNumber(tmp);
+		printString("로또번호:" + user);
+	}
+	
+	public void printString(String str) {
+		System.out.println("----------");
+		System.out.println(str);
+	}
+	
+	@Override
+	public void createLottoAuto() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void insertLotto(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void checkLotto() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void printLotto() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

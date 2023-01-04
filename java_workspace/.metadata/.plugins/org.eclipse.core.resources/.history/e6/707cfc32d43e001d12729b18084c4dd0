@@ -1,0 +1,22 @@
+package day11;
+
+import java.util.TreeSet;
+
+public class TreeSet02 {
+
+	public static void main(String[] args) {
+		//가장 큰 점수 출력, 가장 작은 점수 출력
+		//80점 이상 점수출력(tailSet, 50점이하 점수출력(headSet)
+		int[] score = {80,95,78,32,56,12,98,66};
+		TreeSet<Integer> set = new TreeSet<>();
+		for(int i=0; i<score.length; i++) {
+			set.add(score[i]);
+		}
+		System.out.println(set);
+		System.out.println(set.first());
+		System.out.println(set.last());
+		System.out.println(set.headSet(50));
+		System.out.println(set.tailSet(80));
+	}
+
+}

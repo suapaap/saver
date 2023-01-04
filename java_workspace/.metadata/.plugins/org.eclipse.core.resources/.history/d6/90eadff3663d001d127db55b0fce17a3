@@ -1,0 +1,9 @@
+package day10;
+
+public class LottoManager {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

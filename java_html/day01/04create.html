@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <p><b><h1>회원가입</h1></b></p>
+
+    <p><form action="">
+        아이디 : <input type="text" placeholder="ID를 입력하세요" name="id">
+        <br>
+        비밀번호 : <input type="password" placeholder="비밀번호를 입력하세요" name="password">
+        <br>
+        비밀번호 확인 : <input type="password" placeholder="한번 더 입력하세요" name="password">
+        <br>
+        이메일 : <input type="email" placeholder="이메일을 입력하세요" name="email">
+        <br>
+        성별 : <label for="man">
+            <input type="radio" name="sex" id="man" value="남성">남성
+        </label>        
+        <label for="woman">
+            <input type="radio" name="sex" id="woman" value="여성">여성
+        </label>
+        <br>
+        가족구성원 : <label for="man1">
+            <input type="checkbox" name="family" id="man1" value="아빠">아빠
+        </label>        
+        <label for="woman1">
+            <input type="checkbox" name="family" id="woman1" value="엄마">엄마
+        </label>
+        <label for="woman2">
+            <input type="checkbox" name="family" id="woman2" value="여자매">여자매
+        </label>
+        <label for="man2">
+            <input type="checkbox" name="family" id="man2" value="남형제">남형제
+        </label>
+        <br>
+        전화번호 : <input type="number" name="num1"> - 
+        <input type="number" name="num2"> - <input type="number" name="num3">
+        <br>
+        <input type="submit" value="회원가입">
+    </form></p>
+</body>
+</html>

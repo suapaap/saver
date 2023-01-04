@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Q1. 2자리의 양의 정수를 입력하고, 그 수까지의 홀수 합과 짝수합 출력</h1>
+    2자리의 양의 정수 입력 : <input type="text" id="input" /><br />
+    <button type="button" onclick="sum(input.value)">출력</button>
+    <h1 id="print"></h1>
+
+    <script>
+      function sum(iv) {
+        let zzac = 0;
+        let hol = 0;
+        document.getElementById("print").innerHTML = "";
+        error();
+        console.log(error());
+        for (let i = 0; i <= iv; i++) {
+          if (i % 2 == 0) {
+            zzac += i;
+          } else if (i % 2 == 1) {
+            hol += i;
+          }
+        }
+        document.getElementById(
+          "print"
+        ).innerText = `짝수의 합은 ${zzac}, 홀수의 합은 ${hol}`;
+
+        function error(num) {
+          if (num > 100 || num < 0) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

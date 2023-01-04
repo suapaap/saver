@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/92e616dfba.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>팝업창</title>
+  </head>
+  <style>
+          @font-face {
+          font-family: 'jua';
+          src: url(/font/Jua-Regular.ttf);
+      }
+      *{
+        font-family: 'jua';}
+    * {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      background-color: black;
+    }
+
+    .buyBtn {
+      position: absolute;
+      border: 4px solid rgb(221, 204, 204);
+      width: 170px;
+      height: 50px;
+      z-index: 1;
+      bottom: 400px;
+      left: 13%;
+      text-align: center;
+      padding-top: 6px;
+      background-color: transparent;
+    }
+
+    .buyBtn:hover {
+      background-color: rgba(66, 66, 70, 0.952);
+    }
+
+    .buyBtn > a,
+    .mainBtn > a,
+    .youtubeBtn > a {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      background-color: transparent;
+    }
+
+    .mainBtn,
+    .youtubeBtn {
+      position: absolute;
+      border: 2px solid rgb(221, 204, 204);
+      width: 40px;
+      height: 40px;
+      z-index: 1;
+      text-align: center;
+      padding-top: 3px;
+      background-color: transparent;
+    }
+
+    .icon {
+      background-color: transparent;
+    }
+
+    .mainBtn:hover,
+    .youtubeBtn:hover {
+      font-size: 22px;
+      background-color: rgba(66, 66, 70, 0.952);
+    }
+
+    .mainBtn {
+      top: 5%;
+      right: 10%;
+    }
+
+    .youtubeBtn {
+      top: 5%;
+      right: 13%;
+    }
+
+    .video-wrap {
+      position: relative;
+      overflow: hidden;
+      outline: none;
+    }
+
+    .video-wrap video {
+      width: 100%;
+      height: 100%;
+    }
+
+    .today {
+      position: absolute;
+      width: 180px;
+      height: 25px;
+      z-index: 1;
+      bottom: 4%;
+      left: 13%;
+      background-color: transparent;
+      text-align: center;
+    }
+
+    .today > a {
+      text-decoration: none;
+      color: whitesmoke;
+      font-size: 15px;
+      background-color: transparent;
+    }
+
+    .middle {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      margin: 0px auto;
+      position: relative;
+    }
+
+    video {
+      pointer-events: none;
+    }
+  </style>
+
+  <body>
+    <div class="video-wrap">
+      <video
+        width="500"
+        height="225"
+        src="/image/팝업동영상.mp4"
+        loop
+        muted
+        autoplay="autoplay"
+      ></video>
+
+      <div class="buyBtn">
+        <a href="store.html">신작 출시</a>
+      </div>
+
+      <div class="mainBtn">
+        <a href="main.html"><i class="fa-solid fa-house icon"></i></a>
+      </div>
+      <div class="youtubeBtn">
+        <a href="https://www.youtube.com/watch?v=Syl1QRue2QE&t=178s"
+          ><i class="fa-brands fa-youtube icon"></i
+        ></a>
+      </div>
+
+      <div class="foot">
+        <div class="today">
+          <a href="main.html">오늘 하루 이 창 열지 않기</a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script></script>
+</html>

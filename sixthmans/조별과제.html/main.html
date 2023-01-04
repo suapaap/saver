@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="main.css" />
+    <script
+      src="https://kit.fontawesome.com/92e616dfba.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>6조 웹사이트</title>
+  </head>
+
+  <body>
+    <!-- 고정 헤드 -->
+    <div class="nav" id="navBar">
+      <div class="leftBar">
+        <div class="logo">
+          <a href="main.html">
+            <i class="fa-solid fa-gamepad"></i>
+          </a>
+        </div>
+
+        <div class="menu">
+          <div class="menus">
+            <li><a href="intro.html">소개</a></li>
+          </div>
+          <div class="menus">
+            <li><a href="store.html">스토어</a></li>
+          </div>
+          <div class="menus">
+            <li><a href="목록.html">커뮤니티</a></li>
+          </div>
+        </div>
+      </div>
+
+      <form action="store.html">
+        <div class="searchbox">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="text"
+            placeholder="STORE SEARCH"
+            id="searchWord"
+            onkeyup="search()"
+          />
+        </div>
+      </form>
+
+      <div class="login">
+        <a href="">
+          <i class="fa-regular fa-circle-user"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- 중앙 사진 -->
+    <div class="middle">
+      <video muted autoplay loop>
+        <source src="/image/픽사베이98023.mp4" />
+      </video>
+      <div id="slider">
+        <ul id="slideWrap">
+          <li><img src="/image/2017-06-15 14-31-43.jpg" alt="사진1" /></li>
+          <li><img src="/image/2017-06-15 14-32-00.jpg" alt="사진2" /></li>
+          <li><img src="/image/2017-06-15 14-32-21.jpg" alt="사진3" /></li>
+          <li><img src="/image/2017-06-15 14-33-09.jpg" alt="사진4" /></li>
+          <li><img src="/image/2017-06-15 14-32-47.jpg" alt="사진5" /></li>
+        </ul>
+        <!-- 좌우이동 -->
+        <a id="prev" href="#"> << </a>
+        <a id="next" href="#"> >> </a>
+      </div>
+    </div>
+
+    <!-- 오른쪽 하단 고정 top button -->
+    <a href="#" class="btn_top">
+      <i class="fa-solid fa-circle-arrow-up btn_top"></i>
+    </a>
+
+    <!-- 하단 -->
+    <div class="foot">
+      <div class="foot-icons">
+        <div>
+          <a href="http://www.youtube.com">
+            <i class="fa-brands fa-youtube foot-icon"></i
+          ></a>
+        </div>
+        <div>
+          <a href="https://ko-kr.facebook.com/"
+            ><i class="fa-brands fa-facebook foot-icon"></i
+          ></a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/t"
+            ><i class="fa-brands fa-instagram foot-icon"></i
+          ></a>
+        </div>
+        <div>
+          <a href="https://twitter.com/"
+            ><i class="fa-brands fa-twitter foot-icon"></i
+          ></a>
+        </div>
+      </div>
+      <hr />
+      <p class="foot-info">
+        <br />
+        <a href="#">인재채용</a> | <a href="#">회사소개</a> |
+        <a href="#">고객지원</a> | <a href="#">문의 등록</a> |
+        <a href="#">보도자료</a> | <a href="#">API</a> <br /><br />
+        지금 바로 즐겨보세요 <a href="main.html">sixthman-Team </a>
+      </p>
+
+      <pre class="foot-info">
+            주소: 인천광역시 남동구 인주대로 593 엔타스빌딩 12층
+            대표 번호: 2588-2588 | 팩스 번호: (032)812-1246 | 이메일 sixthman-Teamsuppot@ezen.co.kr
+            사업자 등록 번호:516-86-00232 | 대표 : DongEun-JO | 개인정보 보호책임자:6조 전체
+       
+        </pre
+      >
+      <p class="foot-info">
+        © 2022, sixthman-Team, Inc. All Rights Reserved. sixthman,
+        sixthman-Team, sixthman-Team 로고, Fortnite, Fortnite 로고, Unreal,
+        Unreal Engine, Unreal Engine 로고, Unreal Tournament, Unreal Tournament
+        로고의 모든 저작권은 sixthman-Team, Inc.에 있으며, 이는 미국 및 그 외
+        국가에 모두 해당됩니다. 기타 브랜드 또는 제품 이름은 해당 소유자의
+        상표입니다. 미국 외 거래는 sixthman-Team International, S.à r.l.을 통해
+        이뤄집니다.
+      </p>
+    </div>
+
+    <script>
+      let responsiveSlider = function () {
+        let slider = document.getElementById("slider");
+        let sliderWidth = slider.offsetWidth;
+        let slideList = document.getElementById("slideWrap");
+        let count = 1;
+        let items = slideList.querySelectorAll("li").length;
+        let prev = document.getElementById("prev");
+        let next = document.getElementById("next");
+
+        window.addEventListener("resize", function () {
+          sliderWidth = slider.offsetWidth;
+        });
+
+        let prevSlide = function () {
+          if (count > 1) {
+            count = count - 2;
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+          } else if ((count = 1)) {
+            count = items - 1;
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+          }
+        };
+
+        let nextSlide = function () {
+          if (count < items) {
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+          } else if ((count = items)) {
+            slideList.style.left = "0px";
+            count = 1;
+          }
+        };
+
+        next.addEventListener("click", function () {
+          nextSlide();
+        });
+
+        prev.addEventListener("click", function () {
+          prevSlide();
+        });
+
+        setInterval(function () {
+          nextSlide();
+        }, 5000);
+      };
+
+      window.onload = function () {
+        responsiveSlider();
+      };
+    </script>
+  </body>
+</html>

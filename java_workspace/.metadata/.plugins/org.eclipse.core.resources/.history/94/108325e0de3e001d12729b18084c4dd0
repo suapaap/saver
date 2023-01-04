@@ -1,0 +1,42 @@
+package day11;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class MapEx01 {
+
+	public static void main(String[] args) {
+		// 과목과 점수를 입력받아 출력하고, 합계, 평균 출력 
+		 Scanner scan = new Scanner(System.in); //객체 생성
+		 HashMap<String, Integer> map = new HashMap<>();
+		 String grade="";
+		 int score=0;
+		 while(!grade.equals("n")) {
+			 System.out.println("과목을 입력해주세요");
+			 grade=scan.next();
+			 if(grade.equals("n")) {
+				 break;
+			 }
+			 System.out.println("점수를 입력해주세요");
+			 score=scan.nextInt();
+			
+			 map.put(grade, score);
+			 
+		 }
+		 
+		
+		int sum=0;
+		Iterator<String> key = map.keySet().iterator(); //Iterator 객체 생성
+		
+		while(key.hasNext()) { // key의 값이 있으면 반복해서
+			String st = key.next(); // st변수에 key값을 넣어라
+			sum=sum+map.get(st);
+			
+			System.out.println(st+" : "+map.get(st));
+		}
+		 System.out.println(sum);
+		 System.out.println("평균 : "+sum/map.size());
+	}
+
+}

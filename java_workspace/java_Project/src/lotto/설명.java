@@ -1,0 +1,24 @@
+package lotto;
+
+public class 설명 {
+	/* Lotto 프로그램 생성
+	 * 
+	 * Lotto => 로또 사용자 번호 (6자리)
+	 * LottoE => Lotto를 상속 (6자리) + 보너스번호 =>7자리
+	 * LottoManager => 전체적인 흐름
+	 * 
+	 * main 
+	 * 1. 로또 번호 생성 (수동): 사용자가 직접 입력
+	 * createLotto(scan)
+	 * 2. 로또 번호 생성 (자동): random생성 => 
+	 * createLottoAuto()
+	 * 3. 당첨번호 생성(수동,자동) : 
+	 * insertLotto(scan)
+	 * 4. 당첨번호(내역)확인 => 
+	 * checkLotto()
+	 * (현재회차 : 가장 마지막에 생성한 당첨번호)
+	 * 5. 당첨번호 목록 확인(전체)
+	 * printLotto()
+	 * 6. 종료
+	 * */
+}

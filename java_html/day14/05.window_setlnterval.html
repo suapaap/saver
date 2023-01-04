@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #h1,
+      #h2 {
+        background-color: red;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="h1">
+      setInterval(callback function, interval ducation) :
+      duration(millisecond)을 주기로 지속적으로 callback function을 실행
+    </h1>
+    <h1 id="h2">clearInterval(할당객체)로 중지</h1>
+    <button type="button" id="start">start</button>
+    <button type="button" id="finish">finish</button>
+    <script>
+      let intervalObj;
+      function changeColor() {
+        intervalObj = setInterval(flashColor, 200);
+      }
+      function flashColor() {
+        let elem = document.getElementById("h1");
+        elem.style.color = elem.style.color == "white" ? "red" : "white";
+        elem.style.backgroundColor =
+          elem.style.color == "red" ? "yellow" : "red";
+
+        let elem1 = document.getElementById("h2");
+        elem1.style.color = elem1.style.color == "white" ? "red" : "white";
+        elem1.style.backgroundColor =
+          elem1.style.color == "red" ? "yellow" : "red";
+      }
+      document.getElementById("start").addEventListener("click", changeColor);
+
+      function stopColor() {
+        clearInterval(intervalObj);
+      }
+      document.getElementById("finish").addEventListener("click", stopColor);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>
+        가장 많이 사용하는 데이터 타입을 다루는 메서드
+    </h1>
+    <ul>
+        <li>
+            문자열 타입은 index(0부터 시작) 번호를 갖고 있다.
+        </li>
+        <li>
+            문자열 데이터 값 내에서 개행을 하는 것은 추천하는 방법이 아님
+        </li>
+        <li>
+            length 프로퍼티는 문자값의 총 길이, 마지막 문자 번호는 length-1 값을 이용
+        </li>
+        <li> 문자열 추출 : slice(), substring(), substr() </li>
+        <li>
+            replace(oldstr, newstr) : 첫번째 매칭되는 문자만, 대소문자 구분
+        </li>
+        <li>
+            padStart(목표문자길이, 채울문자) : 앞쪽에 채우기
+            padEnd(목표문자길이, 채울문자) : 뒤쪽에 채우기
+        </li>
+        <li>
+            charAt(index) : 해당 위치의 문자만 추출
+        </li>
+        <li>
+            indexOf("str"), lastIndexOf("str") : 지정 문자열의 index 리턴 <br>
+        </li>
+        <li>
+            startWith(), endWith() : 지정문자열이 탐색대상 문자열에서 시작과 끝에 존재하는지 여부를 체크
+            return true or false
+        </li>
+        
+
+    </ul>
+    <script>
+        let str = "Apple, banana, kiwi"
+        // 별도로 콘솔에 출력하기
+        console.log(str.slice(0,5)); //사과
+        console.log(str.slice(-4)); //키위
+        // -를 사용할 수 있음. -란 뒤에서부터 출발
+        console.log(str.substring(0,str.indexOf(','))); // 사과
+        console.log(str.substring(str.indexOf(',')+2,str.lastIndexOf(','))); //바나나
+
+        //replace 메서드 : 정규표현식(정규식)을 알아두면 편하다.
+        let text = "please visit Microsoft!"
+        let newText = text.replace(/microsoft/i, "w3schools"); // / text /i : 대소문자 구분X
+        confirmtext= "please visit Microsoft! and Microsoft and Microsoft";
+        newText = text.replace(/Microsoft/g, "w3schools"); // g : 문자열 전체적용
+        console.log(newText);
+
+        //주민번호를 -를 포함하는 텍스를 준비하고,
+        //생년월일-성별코드1자리 뒷쪽으로 *로 대체하여 출력
+        let idNum = "881212-1234567";
+        // idnum의 성별을 콘솔에 출력
+        console.log(idNum.charAt(idNum.indexOf('-')+1))
+        alert(idNum.startsWith('1',7) == true ? "남성" : "여성");
+        console.log(idNum.startsWith('1',7) == true ? "남성" : "여성");
+    </script>
+</body>
+</html>

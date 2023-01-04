@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    
+    </style>
+</head>
+<body>
+    <h3>구구단 출력</h3>
+    <button type="button" onclick="gugu()">구구단</button:b>
+    <!-- <table id="gugudan"> -->
+        <div id="gugudan"></div>
+        <!-- <tr id="tr">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table> -->
+    <script>
+        function gugu(){
+            let str = `<table>`;
+            let incre = 1; // 1~9증가하는 뒤값
+            while(incre<=9){
+                let line = '<tr>';
+                    let dan = 2;
+                    while(dan<=9){
+                        line+= `<td> ${dan} × ${incre} = ${dan*incre} </td>`;
+                        dan++;
+                    }
+                    incre++;
+                    str += `${line}</tr>`;
+                }
+                str += `</table>`;
+                document.getElementById('gugudan').innerHTML = str;
+            }
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+  </head>
+  <body>
+    <h1>Q1. 2자리의 양의 정수를 입력하고, 그 수까지의 홀수 합과 짝수합 출력</h1>
+    2자리의 양의 정수 입력 : <input type="text" id="input" /><br />
+    <button type="button" onclick="sum()">출력</button>
+    <h1 id="print"></h1>
+    <script>
+      function sum() {
+        let num = document.getElementById("input").value;
+        let hol = 0;
+        let zzac = 0;
+        if (num > 99 || num < 10) {
+          alert("2자리의 수를 입력해주세요");
+          document.getElementById("print").innerHTML = "다시 입력해주세요";
+          document.getElementById("input").focus();
+        } else {
+          for (let i = 0; i <= num; i++) {
+            if (i % 2 == 0) {
+              zzac += i;
+            } else {
+              hol += i;
+            }
+          }
+          document.getElementById(
+            "print"
+          ).innerText = `홀수의 합은 ${hol}이고, 짝수의 합은 ${zzac}이다.`;
+        }
+      }
+    </script>
+  </body>
+</html>

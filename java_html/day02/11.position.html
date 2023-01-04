@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <!-- 
+        position 배치속성
+        원하는 위치에 배치 가능
+        - static (기본값)
+        - relative : 현재 위치를 기준으로 상대적인 위치를 계산해서 배치
+        - absolute : 조상 중 position이 relative인 요소가 있으면 해당 요소를 기준으로 배치
+        없으면 브라우저를 기준으로 배치
+        - fixed : 브라우저에 특정 위치에 고정 
+    -->
+    <style>
+        body{
+            height: 1000px;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background-color: gold;
+            text-align: center;
+        }
+        .box1{
+            position: static;
+        }
+        .box2{
+            position: relative;
+            background-color: aquamarine;
+            /* top: 10px; */
+        }
+        .box3{
+            position: absolute;
+            background-color: blueviolet;
+            /* top: 0; */
+            /* left: 0; */
+        }
+        .box4{
+            position: fixed;
+            background-color: yellowgreen;
+            /* bottom: 10px; */
+            right: 520px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+</html>

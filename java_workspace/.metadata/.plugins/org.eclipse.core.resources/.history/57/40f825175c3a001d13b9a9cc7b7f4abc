@@ -1,0 +1,67 @@
+package day08;
+import java.util.Scanner;
+public class 숙제 {
+	public static void main(String[] args) {
+		/* 5개문자열 배열을 생성한 후, 5개의 파일명을 입력받는 코드를 작성
+		 * 입력받은 파일명 중 이미지 파일을 검색하여 출력하는 코드를 작성
+		 * 이미지 형식 파일 = jpg, png, gif, jpeg
+		 */
+	
+		Scanner scan = new Scanner(System.in);
+		String file[] = new String[5];
+		String search[] = new String[] {"jpg", "png", "gif", "jpeg"};
+		
+		System.out.println("[파일명.확장자]"+file.length+"개를 입력해주세요 : ");
+		for(int i=0; i<file.length; i++) {
+			file[i] = scan.next();
+		}
+		
+		System.out.println("--------------------------");
+		
+		if(isContain(file, search)) {
+			System.out.println("찾으신 확장자 목록입니다.");
+		} else {
+			System.out.println("찾는 확장자가 없습니다.");
+		}
+		
+		containPrint(file, search);
+		
+	}
+	
+	/* 기능 : 배열에서 찾는 문자열이 있는 주소를 출력해주는 메소
+	 * 매개변수 : 배열, 찾는 값
+	 * 리턴타입 : void
+	 * 메소드명 : containPrint
+	 */
+	
+	public static void containPrint(String file[], String search[]) {		
+		for(int i=0; i<file.length; i++) {
+			for(int j=0; j<search.length; j++) {
+				if(file[i].contains(search[j])) {
+					System.out.println(file[i]);					
+				}
+			}
+		}
+	}
+	/* 기능 : 배열에서 찾는 문자열이 있는지 없는지 확인하는 메서드
+	 * 매개변수 : 배열, 찾는 값
+	 * 리턴타입 : boolean
+	 * 메소드명 : isContain
+	 */
+	
+	public static boolean isContain(String file[], String search[]) {
+		int count = 0;
+		for(int i=0; i<file.length; i++) {
+			for(int j=0; j<search.length; j++) {
+				if(file[i].contains(search[j])) {
+					count ++;
+				}
+			}
+		}
+		if (count==0) {
+			return false;
+		} else {
+			return true;	
+		}
+	}
+}

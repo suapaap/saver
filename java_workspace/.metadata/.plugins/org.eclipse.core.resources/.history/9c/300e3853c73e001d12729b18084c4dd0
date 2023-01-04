@@ -1,0 +1,19 @@
+package day11;
+
+import java.util.ArrayList;
+
+public class ListEx01 {
+
+	public static void main(String[] args) {
+		/* ArrayList를 만들고 1~10까지 저장한 후 출력
+		 * */
+		int num=0;
+		ArrayList<Integer> al = new ArrayList<Integer>();
+		for(int i=1; i<=10; i++) {
+			num= i;
+			al.add(num);
+		}
+		System.out.println(al);
+	}
+
+}

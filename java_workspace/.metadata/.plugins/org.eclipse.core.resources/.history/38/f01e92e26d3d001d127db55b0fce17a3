@@ -1,0 +1,25 @@
+package day10;
+
+import java.util.Scanner;
+
+public class Lotto프로그램 {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		int player = scan.nextInt();
+		
+		Lotto_maker lm = new Lotto_maker();
+		int []lotto = new int[7];
+		lm.printCALotto(lotto);
+		int main=0;
+		
+		do {
+			
+		}while(main!=5);
+		
+		
+	}
+
+	
+}

@@ -1,0 +1,62 @@
+package product;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Product {
+		private String menu;
+		private Integer price;
+
+			public Product() {}
+			
+			public Product(String menu, Integer price) {
+				this.menu = menu;
+				this.price = price;
+				}
+			ArrayList<String> al1 = new ArrayList<>();
+			ArrayList<Integer> al2 = new ArrayList<>();
+			Scanner scan = new Scanner(System.in);
+			
+			public void add() {
+				System.out.println("제품명을 입력하세요");
+				al1.add(scan.next());
+				System.out.println("가격을 입력하세요");
+				al2.add(scan.nextInt());
+				System.out.println("입력이 완료되었습니다 ");
+			}
+			
+			public void addprint() {
+			Iterator<String> is= al1.iterator(); al2.iterator();
+			while(is.hasNext()) {
+				String tmp = is.next();
+				System.out.println(tmp+" ");
+			}
+			}
+		
+			@Override
+			public String toString() {
+				return menu + " " + price ;
+			}
+			public String getMenu() {
+				return menu;
+			}
+			public void setMenu(String menu) {
+				this.menu = menu;
+			}
+			public Integer getPrice() {
+				return price;
+			}
+			public void setPrice(Integer price) {
+				this.price = price;
+			}
+			
+			public void printmenu() {
+				System.out.println("보기 중 하나를 고르시오");
+				System.out.println("1. 제품추가");
+				System.out.println("2. 제품리스트보기");
+				System.out.println("3. 제품주문");
+				System.out.println("4. 주문내역(주문리스트)(총 금액)");
+				System.out.println("5. 프로그램 종료");
+		}			
+}

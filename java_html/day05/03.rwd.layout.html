@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rwd.layout</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            
+        }
+        div{
+            width: 100%;
+            height: 100%;
+        }
+        .header{
+            height: 60px;
+            background-color: antiquewhite;
+            text-align: left;
+            
+        }
+        .note-img{
+            
+            width: 100%;
+            height: 300px;
+        }
+        .text{
+            width: 100%;
+            height: 300px;
+        }
+        .display{
+            width: 100%;
+            height: 350px;
+        }
+        .mouse{
+            height: 200px;
+        }
+        .keyboard{
+            height: 200px;
+        }
+        div>img{
+            width: 100%;
+            height: 100%;
+        }
+        @media screen and (min-width: 576px) {
+            .display{
+                width: 50%;
+                height: 400px;
+                float: left;
+            }
+            .mouse{
+                width: 50%;
+                height: 200px;
+                float: right;
+            }
+            .keyboard{
+                width: 50%;
+                height: 200px;
+                float: right;
+            }
+        }
+        @media screen and (max-width: 992px) {
+            .note-img{
+                width: 50%;
+                height: 100%;
+                float: left;
+            }
+            .text{
+                width: 50%;
+                height: 50%;
+                float: right;
+            }
+            .display{
+                width: 25%;
+                height: 50%;
+            }
+            .mouse{
+                width: 25%;
+                height: 25%;
+                float: right;
+            }
+            .keyboard{
+                width: 25%;
+                height: 25%;
+                float: right;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header"><h2>HAKUNA MATATA</h2></div>
+    <div class="note-img"><img src="/image/notebook.jfif" alt=""></div>
+    <div class="text"></div>
+        <div>
+            <p>yoyoyoyo</p>
+            <p>it's show time</p>
+            <p>let's do it again</p>
+        </div>
+    <div class="display"><img src="/image/display.jfif" alt=""></div>
+    <div class="mouse"><img src="/image/mouse.jfif" alt=""></div>
+    <div class="keyboard"><img src="/image/keyboard.jfif" alt=""></div>
+
+</body>
+</html>

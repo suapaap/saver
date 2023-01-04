@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display-table</title>
+    <style>
+        *{
+          margin: 0;  
+          padding: 0;
+        }
+        .boxwrap{
+            display: table;
+            width: 100%;
+            background-color: silver;
+            table-layout: fixed; /* 테이블 고정하는 방법*/
+            overflow: hidden;
+        }
+        .boxwrap .box{
+            /* 부모 속성(table)안에 들어가는 셀 (표 안의 셀) */
+            display: table-cell;
+            /* 세로 가운데 정렬 */
+            vertical-align: middle;
+            text-align: center;
+            padding: 10px;
+        }
+        .thumb img{
+            width: 50%;
+        }
+        .title_car{
+            display: block;
+            font-size: 1em;
+        }
+        .desc_car{
+            font-size: 0.7em;
+        }
+        .price{
+            font-size: 0.9em;
+            font-weight: 700;
+        }
+        .title_car, .desc_car{
+            margin-top: 10px;
+        }
+        .box .link {
+            text-decoration: none;
+            color: black;
+        }
+        .box .link:hover{
+            text-decoration: underline;
+            /* transition: transform ease 0.3s;
+            transform: scale(1.1); */
+        }
+        img{
+            transition: transform ease 0.3s;
+        }
+        img:hover{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="boxwrap">
+        <!-- 각각의 box들 -->
+        <!-- 첫 박스 set -->
+        <div class="box">
+            <a href="https://www.kia.com/kr/buy/build-your-car/build/trim?rcCode=KRCV003" target="_blank" class="link" >
+                <span class="thumb"><img src="/image/ev6.jfif" alt="자동차">
+                </span>
+                <strong class="title_car">EV6</strong>
+                <p class="desc_car">기아 전기차</p>
+                <p class="price">60,000,000원</p>
+            </a>
+        </div>
+        <!-- 두번째 박스 시작점 -->
+        <div class="box">
+            <a href="https://www.hyundai.com/kr/ko/e/vehicles/estimation/model?model=CE01&purposeCode=J&carM5LoadCode=&carM5InteriorSpaceCode=" target="_blank" class="link">
+                <span class="thumb"><img src="/image/아이오닉6.jfif" alt="자동차">
+                </span>
+                <strong class="title_car">아이오닉6</strong>
+                <p class="desc_car">현대 전기차</p>
+                <p class="price">65,000,000원</p>
+            </a>
+        </div>
+        <div class="box">
+            <a href="https://www.tesla.com/ko_kr/modely/design#overview" target="_blank" class="link">
+                <span class="thumb"><img src="/image/테슬라Y.jfif" alt="자동차">
+                </span>
+                <strong class="title_car">테슬라 Y모델</strong>
+                <p class="desc_car">테슬라 전기차</p>
+                <p class="price">100,000,000원</p>
+            </a>
+        </div>
+        <div class="box">
+            <a href="https://www.chevrolet.co.kr/purchase/estimate-online-carconfigurator.gm?modelCode=1F&ubModelCode=K100" target="_blank" class="link">
+                <span class="thumb"><img src="/image/볼트.jfif" alt="자동차">
+                </span>
+                <strong class="title_car">Bolt</strong>
+                <p class="desc_car">쉐보레 전기차</p>
+                <p class="price">50,000,000원</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

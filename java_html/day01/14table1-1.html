@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up table</title>
+</head>
+<body>
+    <table>
+        <caption><b>회원가입</b></caption>
+        <thead>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" placeholder="ID를 입력하세요" name="id"></td>
+            </tr>
+            <tr>
+                <td>패스워드</td>
+                <td><input type="password" placeholder="비밀번호를 입력하세요" name="password"></td>
+            </tr>
+            <tr>
+                <td>비밀번호 확인</td>
+                <td><input type="password" placeholder="한번 더 입력하세요" name="password">
+                    </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>이메일</td>
+                <td><input type="email" placeholder="이메일을 입력하세요" name="email">
+                </td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td><label for="man">
+                    <input type="radio" name="sex" id="man" value="남성">남성
+                </label>        
+                <label for="woman">
+                    <input type="radio" name="sex" id="woman" value="여성">여성
+                </label></td>
+            </tr>
+            <tr>
+                <td>전화번호</td>
+                <td><input type="number" name="num1"> - 
+                    <input type="number" name="num2"> - <input type="number" name="num3"></td>
+            </tr>
+            
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2"><input type="submit" value="회원가입"></th>
+            </tr>
+        </tfoot>
+
+    </table>
+</body>
+</html>

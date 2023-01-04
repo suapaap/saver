@@ -1,0 +1,36 @@
+package day11;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class SetEx01 {
+
+	public static void main(String[] args) {
+		// HashSet 구성, a,b,c,a,b,c 추가 후 출력
+		// 중복불가, 순서보장불가 => 정렬도 안됨. (list로 변경 후 정렬)
+		HashSet<String> set = new HashSet<String>(); //객체생성
+		set.add("a"); //값 입력
+		set.add("b");
+		set.add("c");
+		set.add("a");
+		set.add("b");
+		set.add("c");
+		
+		for(String tmp : set) { // 향상된 for문
+			System.out.print(tmp+" ");
+		}
+		System.out.println();
+		Iterator<String> is = set.iterator();
+		while(is.hasNext()) {
+			String tmp= is.next();
+			System.out.print(tmp+" ");
+		}
+		
+		Set<Integer> set2 = new HashSet<>();
+		set2.add(10);
+		set2.add(new Integer(20));
+		System.out.println(set2);
+	}
+}

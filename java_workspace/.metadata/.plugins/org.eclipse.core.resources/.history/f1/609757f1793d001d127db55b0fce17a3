@@ -1,0 +1,59 @@
+package day10;
+
+public class T_LottoE extends T_Lotto {
+	//당첨번호 생성 클래스 Lotto를 상속받아서 보너스 번호만 처리
+	//멤버변수
+	private int bonus;
+
+	@Override
+	protected void randomLotto() {
+		// TODO Auto-generated method stub
+		super.randomLotto();
+	}
+
+	@Override
+	protected void init() {
+		// TODO Auto-generated method stub
+		super.init();
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+
+	@Override
+	protected void insertNumber(int[] arr) {
+		// TODO Auto-generated method stub
+		super.insertNumber(arr);
+	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
+	}
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
+
+	@Override
+	protected void finalize() throws Throwable {
+		// TODO Auto-generated method stub
+		super.finalize();
+	}
+	
+	//메서드
+	//오버라이딩 메서드 randomLotto, init, toString, insertNumber
+	
+}

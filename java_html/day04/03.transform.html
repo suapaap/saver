@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <!-- 
+        transform : 회전, 이동, 확대 할 때 사용
+        - translate(x1,y1) : x축으로 x1만큼, y축으로 y1만큼 이동
+        - translateX(x1) : x축으로만 이동
+        - translateY(y1) : y축으로만 이동
+        - scale(w,h) : 가로를 w배, 높이를 h배만큼 확대, 0으로하면 안보임
+        - scaleX(w) : 가로만 w배
+        - scaleY(h) : 가로만 h배
+        - rotate(a) : a각도 만큼 시계방향으로 회전
+        - skew(xa,ya) : x축으로 xa만큼, y축으로 ya만큼 기울임
+        - skewX(xa) : x축으로 xa만큼 기울임
+        - skewY(ya) : y축으로 ya만큼 기울임
+        회전시 단위 : deg
+     -->
+     <!-- 
+        transition : 속성을 서서히 변화시키는 속성
+            - property : 서서히 변화시킬 속성 (none, all, property(속성이름) ...)
+            - timing-function : 진행속도 (ease, linear, ease-in ...)
+            - durration : 총시간 (ease(기본), linear, ease-in ... 속도차이)
+            - delay : 시작지연
+            - initial : 기본값 설정
+            - inherit : 부모요소의 속성값 상속
+     -->
+     <style>
+        
+        div{
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            background-color: yellowgreen;
+        }
+        @keyframes translate {
+            0%{ transform: translate(0,0);}
+            50%{ transform: translate(300px, 300px);}
+            100%{transform: translate(0,0);}
+        }
+        @keyframes scale {
+            0%{}
+            50%{transform: scale(1.1,1.1);}
+            100%{}
+        }
+        @keyframes rotate {
+            0%{}
+            50%{transform: rotate(580deg);}
+            100%{}
+        }
+        @keyframes skew {
+            0%{}
+            50%{translate: 0 100px; transform: skew(360deg);}
+            100%{}
+        }
+        
+        .box1:hover{
+            animation: translate 1s 1;
+            
+        }
+        .box2{
+            animation: scale 3s 3;
+        }
+        .box3{
+            animation: rotate 3s 3;
+        }
+        .box4{
+            animation: skew 3s 3;
+        }
+        .box5{
+            transition:all ease-in 1s;
+        }
+        .box5:hover{
+            transform: rotate(90deg);
+        }
+     </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <br><br><br><br><hr>
+    <div class="box2"></div>
+    <br><br><br><br><br><br><br><br><hr>
+    <div class="box3"></div>
+    <br><br><br><br><br><br><br><br><hr>
+    <div class="box4"></div>
+    <br><br><br><br><br><br><br><br><hr>
+    <div class="box5"></div>
+    <br><br><br><br><br><br><br><br><hr>
+    
+</body>
+</html>

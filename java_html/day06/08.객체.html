@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <h1>
+        객체 : 식별할 수 있는 것을 상세 특징으로 표현하려한 형식(코드 타입)
+    </h1>
+    <ul>
+        <li>
+            const로 선언하는 것이 일반적 : 객체의 지속성을 확보하기 위함
+        </li>
+        <li>
+            {}; 속성명: 속성값 ... 으로 표현
+        </li>
+        <li>
+            속성명은 같은 객체 내에서는 중복되면 안됨
+        </li>
+        <li>
+            객체 내부의 속성값으로 사용할 수 있는 데이터 타입은 제한이 없다.
+        </li>
+        <li>
+            객체 속성값으로 익명함수를 정의하면 그 함수를 메서드라고 부른다. <br>
+            메서드 명은 속성명이 된다.
+        </li>
+    </ul>
+    <script>
+        const car = {name: 'myCar', year:2020};
+        //재선언 x, 재설정 x - 선언한 객체를 지킬 수 있음
+        let myCar = {name: 'myCar', year:2020};
+        myCar = 100; // 가능 대신 myCar의 객체가 사라짐
+    </script>
+    <script>
+        const me = { 
+            name:'Lee seong weon',
+            age : 22,
+            addr : 'Incheon',
+            hobby : 'Driving',
+            favor : 'ade',
+            subject : {
+                year: 2020,
+                title: 'javascript',
+                ver: 'ES6',
+                project: 'Java',
+                intro: function(){
+                    console.log(`${me.subject.title}:${me.subject.ver} = ${me.subject.project}`);
+                    return `re:${this.title}:${this.ver}=${this.project}`;
+                },
+            },
+            year: 2022,
+        };
+        console.log(me.name);
+        console.log(me.age);
+        console.log(me.subject.title);
+        console.log(me.subject.project);
+        console.log(me.subject.intro); // 함수 실행이 아닌지목
+        console.log(me.subject.intro()); // 함수 호출
+        console.log(me.hobby);
+    </script>
+        // 내가 좋아하는 가수의 객체 이름, 나이, playlist 3가지곡, function()
+        // 노래 3곡을 입력받아(파라미터로 입력) 출력
+    <script>
+        const musician ={
+            vocal: 'IU',
+            age: 30,
+            playList: {
+                juke1:'드라마',
+                juke2:'Boo',
+                juke3:'낙하',
+                juke: function(){
+                console.log(`최고의 곡3가지는 : ${musician.playList.juke1},${musician.playList.juke2},${musician.playList.juke3}`);
+                return `re:${this.juke1}:${this.juke2}:${this.juke3}`;
+                },
+                },
+            };
+                console.log(musician.vocal);
+                console.log(musician.age);
+                console.log(musician.playList);
+                console.log(musician.playList.juke2);
+                
+                function musicfunc(music1,music2,music3){
+                    let bestMusic1 = '첫번째'+music1;
+                    let bestMusic2 = '두번째'+music2;
+                    let bestMusic3 = '세번째'+music3;
+                    console.log(`${bestMusic1},${bestMusic2},${bestMusic3}`);
+                    
+                }
+                console.log(`${musician.vocal.name}는 나의${musician.playList}최애곡이고, 그중에 ${musician.playList.juke1}을 가장 좋아합니다.`);
+                musicfunc('드라마','Boo','낙하');
+        
+
+    </script>
+</body>
+</html>

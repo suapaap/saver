@@ -1,0 +1,10 @@
+package day12;
+
+import java.util.ArrayList;
+
+public class SaleManager {
+	private ArrayList<Sale_Generic01<String, Integer>> menu = new ArrayList<>();
+	private ArrayList<Sale_Generic01<String, Integer>> order = new ArrayList<>();
+
+
+}

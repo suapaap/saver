@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>수학관련 함수 Math</h1>
+    <h3>
+      Math.random(), Math.round(), Math.ceil(), Math.floor(), Math.abs(),
+      Math.max(), Math.min(), Math.pow()
+    </h3>
+    <button type="button" onclick="random()">random버튼</button>
+    <h3 id="printResult"></h3>
+    <script>
+      //0~1사이의 랜덤수 추출 : console.log(Math.random());
+      //0~9사이의 랜덤수 추출 : console.log(Math.random()*10);
+      //1~10까지의 랜덤수 추출 : console.log(Math.floor(Math.random()*10)+1);
+      console.log(Math.floor(Math.random() * 10) + 1);
+    </script>
+    <script>
+      //3과목의 점수를 랜덤으로 발생시켜 과목의 합과 평균 출력
+      // (Math.floor(Math.random()*10)+1);
+      function random() {
+        let kor = Math.floor(Math.random() * 100) + 1;
+        let eng = Math.floor(Math.random() * 100) + 1;
+        let math = Math.floor(Math.random() * 100) + 1;
+        let sum = `${kor + eng + math}`;
+        let avg = `${Math.floor(sum / 3)}`;
+        let grade = "";
+        switch (Math.floor(avg / 10)) {
+          case 10:
+            grade = `${(grade = "A+")}`;
+            break;
+          case 9:
+            grade = `${(grade = "A")}`;
+            break;
+          case 8:
+            grade = `${(grade = "B")}`;
+            break;
+          case 7:
+            grade = `${(grade = "B")}`;
+            break;
+          case 6:
+            grade = `${(grade = "C")}`;
+            break;
+          case 5:
+            grade = `${(grade = "D")}`;
+            break;
+          case 4:
+            grade = `${(grade = "E")}`;
+            break;
+          default:
+            grade = "F";
+        }
+        document.getElementById(
+          "printResult"
+        ).innerText = `합계 : ${sum}, 평균 : ${avg} 등급 : ${grade}`;
+      }
+    </script>
+  </body>
+</html>

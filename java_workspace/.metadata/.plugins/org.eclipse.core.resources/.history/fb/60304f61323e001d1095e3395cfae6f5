@@ -1,0 +1,93 @@
+package day10;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class List02 {
+
+	public static void main(String[] args) {
+		/* --메뉴판--
+		 * 1. 햄버거 : 15000
+		 * 2. 피자 : 20000
+		 * 3. 음료 : 2000
+		 * 4. 과자 : 1000
+		 * 5. 사탕 : 500
+		 * 6. 프로그램종료
+		 * 
+		 * 메뉴를 선택해주세요. 
+		 * 수량을 선택해주세요.
+		 * 추가 주문하시겠습니까? (Y/N)
+		 * 
+		 *  --선택한 메뉴
+		 *  햄버거 1개 : 15000
+		 *  피자 2개 : 40000
+		 *  주문하신 음식의 총 금액은 55000원입니다.
+		 * */
+		Scanner scan = new Scanner (System.in);
+		FoodManager fm = new FoodManager();
+//		List<String> food = new ArrayList<String>();
+//		List<Integer> price = new ArrayList<Integer>();	
+		int menu=0;
+		do {
+			System.out.println("--메뉴판--");
+			System.out.println("메뉴를 선택해주세요.");
+			System.out.println("1. 햄버거 : 15000원");
+			System.out.println("2. 피자 : 20000원");
+			System.out.println("3. 음료수(콜라/사이다) : 2000원");
+			System.out.println("4. 과자 : 1000원");
+			System.out.println("5. 사탕 : 500원");
+			System.out.println("6. 종료 ");
+			menu=scan.nextInt();
+			
+			switch(menu) {
+			case 1:fm.sale
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+			case 0: fm.total();
+			}
+			
+		}while(menu!=6);
+		System.out.println("주문을 종료합니다.");
+		fm.total();
+		
+	}
+}
+
+class FoodManager{
+	ArrayList<String> food = new ArrayList<>(); // 메뉴
+	ArrayList<Integer> price = new ArrayList<>(); // 가격
+	Scanner scan = new Scanner(System.in);
+	public void printMenu() {
+		
+	}
+	public void sale(int menu, int count) {
+		food.add("1. 햄버거");
+		price.add(15000);		
+		food.add("2. 피자");
+		price.add(20000);
+		food.add("3. 음료수(콜라/사이다)");
+		price.add(2000);
+		food.add("4. 과자");
+		price.add(1000);
+		food.add("5. 사탕");
+		price.add(500);
+		for(int i=0; i<food.size(); i++) {
+			for(int j=0; j<price.size(); j++) {
+			menu = scan.nextInt(i);
+			
+			}
+		}
+		
+
+		}		 
+	
+	public void total() {
+		int subsum=0; //나홀로 더하기
+		int sum=0; // 전체더하기
+		
+	}
+}

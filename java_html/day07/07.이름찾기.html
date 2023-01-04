@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이름찾기</title>
+  </head>
+  <body>
+    <h1>
+      input text에 파일명.확장자를 입력하고 전송버튼을 클릭하면 이미지 파일인지
+      아닌지 검사하여 이미지파일 = 정상파일입니다 이미지파일이 아니면 = 이미지
+      파일만 가능합니다. 라고 출력
+    </h1>
+    <form action="">
+      파일명 : <input type="text" id="fileName" />
+      <button type="button" id="subButton" onclick="checkFile()">전송</button>
+    </form>
+    <h2 id="window"></h2>
+
+    <script>
+      let exArr = ["jpg", "gif", "png", "jpeg", "bmp"];
+
+      function checkFile() {
+        let fileName = document.getElementById("fileName").value;
+        let fileEx = fileName.substring(fileName.indexOf(".") + 1);
+        let check = "이미지 파일만 가능합니다.";
+
+        for (i = 0; i < exArr.length; i++) {
+          if (fileEx == exArr[i]) {
+            check = "정상파일입니다";
+          } else if (fileEx.toLowerCase() == exArr[i]) {
+            check = "정상파일입니다";
+          }
+        }
+
+        document.getElementById("window").innerHTML = check;
+      }
+    </script>
+  </body>
+</html>

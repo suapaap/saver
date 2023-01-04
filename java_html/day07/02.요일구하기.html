@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+</head>
+<body>
+    <!-- 오늘날짜 / 시간 -->
+    <!--  
+    날짜의 요일을 알려주는 값
+    getFullYear() : 년도추출 
+    getMonth() : 월 0~11 +1
+    getDate() : 일
+    getDay() : 요일 0~6 일~토
+    getHours() : 시간만
+    getMinutes : 분만
+    getSeconds : 초만
+    getMilliseconds() : 밀리초
+    getTime : 시간
+    -->
+    <!-- 날짜를 문자열로 변환하는 함수 -->
+    <!-- 
+        .toString() : Tue Nov 01 2022 11:42:10 GMT+0900 (한국 표준시)
+        .toDateString() : Tue Nov 01 2022
+        .toLocalString() : 2022. 11. 1. 오전 11:42:41
+        .toLocalDateString() : 2022. 11. 1.
+     -->
+     <!-- 
+        input 날짜를 입력받아 입력받은 날짜의 요일을 같이 출력
+        2022-11-01=>2022-11-01
+    -->
+        <!-- 날짜입력받기 버튼 -->
+        <input type="date" id="date1">
+        <button type="button" onclick="secDate()">확인</button>
+    <h3 id="showDate"></h3>
+
+    <script>
+        function secDate(){
+            let now1 = document.getElementById('date1').value;
+            let now = new Date(now1);
+            console.log(typeof now, now);
+            console.log(now.toLocaleDateString());
+
+            let day = now.getDay();
+            let week='';
+            let arr= ['일','월','화','수','목','금','토'];
+            // switch (day) {
+            //     case 0: week='일'; break;
+            //     case 1: week='월'; break;
+            //     case 2: week='화'; break;
+            //     case 3: week='수'; break;
+            //     case 4: week='목'; break;
+            //     case 5: week='금'; break;
+            //     case 6: week='토'; break;
+            // }
+            document.getElementById("showDate").innerText=
+            `${now.toLocaleDateString()} (${arr[day]})`;
+        }
+     </script>
+</body>
+</html>

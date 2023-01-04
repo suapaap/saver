@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sale</title>
+</head>
+<body>
+    <!-- 가격, 할인율, 할인가격 계산하기 클릭하면 
+        원가, 할인율, 할인된 금액, 지불금액을 출력하는 이벤트 function 작성 -->
+    <form action="" id="saleForm">
+        <fieldset> 
+            가격 : <input type="text" id="price"> 원<br>
+            할인율 : <input type="text" id="salePer"> % <br>
+            <button type="button" id="saleBtn" onclick="saleEvent();">계산하기</button>
+        </fieldset>
+    </form>
+    <h3 id="saleprice"></h3>
+    <script>
+        function saleEvent(){ //필드값 가져오기
+            let price = document.getElementById('price').value;
+            let salePer = document.getElementById('salePer').value;
+            let salePrice=0;
+            let finalPrice=0;
+            if(price<0){
+                alert('세상에 공짜는 없다');
+            }else{
+                salePer = Number(salePer);
+                console.log(price,salePer);
+                price = Number(price);
+                salePrice = price*(salePer/100);
+                finalPrice = price-salePrice;
+            }
+            
+
+            document.getElementById('saleprice').innerText=
+            `원가 : ${price}원, 할인율 : ${salePer}%, 할인된 금액 : ${salePrice}원, 지불금액 : ${finalPrice}원`;
+        }
+    </script>
+</body>
+</html>

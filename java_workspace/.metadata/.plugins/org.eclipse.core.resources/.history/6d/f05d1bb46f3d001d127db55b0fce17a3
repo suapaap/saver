@@ -1,0 +1,86 @@
+package day10;
+
+import java.util.Scanner;
+
+public class Lotto_maker {
+	Scanner scan = new Scanner(System.in);
+	
+	private int createLotto[] = new int[7];
+	private int createLottoAuto[] = new int[7];
+	private int insertLotto[] = new int[6];
+	private int checkLotto;
+	private int printLotto;
+	private int lottoCount;
+
+	public static int random() {
+		int ran1=(int)(Math.random()*45)+1;
+		return ran1;
+	} 
+	public void createLotto(Scanner scan) {
+		for(int i=0; i<createLotto.length; i++) {
+			System.out.println((i+1)+"번째 숫자를 입력하세요 : ");
+			createLotto[i] = scan.nextInt();
+			
+		}
+	}
+
+	public void createLottoAuto(int arr[]) {
+	for(int i=0; i<arr.length; i++) {
+		lottoCount = random();
+		arr[i]=lottoCount;
+		i--;
+		}
+	}
+
+	public void printCALotto(int arr[]) {
+		for(int i=0; i<arr.length; i++) {
+			System.out.println(arr[i]+" ");
+		} 
+	}
+
+	public int[] getCreateLottoAuto() {
+		return createLottoAuto;
+	}
+
+
+	public void setCreateLottoAuto(int[] createLottoAuto) {
+		this.createLottoAuto = createLottoAuto;
+	}
+
+
+	public int getInsertLotto() {
+		return insertLotto;
+	}
+
+
+	public void setInsertLotto(int insertLotto) {
+		this.insertLotto = insertLotto;
+	}
+
+
+	public int getCheckLotto() {
+		return checkLotto;
+	}
+
+
+	public void setCheckLotto(int checkLotto) {
+		this.checkLotto = checkLotto;
+	}
+
+
+	public int getPrintLotto() {
+		return printLotto;
+	}
+
+
+	public void setPrintLotto(int printLotto) {
+		this.printLotto = printLotto;
+	}
+
+
+	public int getLottoCount() {
+		return lottoCount;
+	}
+	
+	
+}

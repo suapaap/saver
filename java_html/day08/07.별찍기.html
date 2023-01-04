@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>별찍기</title>
+  </head>
+  <body>
+    <h1>높이(양의 정수)를 입력받으면 직각삼각형 모양으로 *의 탑이 되게 출력</h1>
+    <pre>
+        입력받은 숫자 : 5
+        *
+        **
+        ***
+        ****
+        *****
+    </pre>
+    높이 입력 (양의 정수) : <input type="number" id="height" />
+    <button type="button" onclick="star()">별 찍기</button>
+    <h3 id="printStar"></h3>
+    <script>
+      function star() {
+        let count = document.getElementById("height").value;
+        document.getElementById("printStar").innerText = ``;
+
+        for (let i = 0; i < count; i++) {
+          for (let j = 0; j <= i; j++) {
+            document.getElementById("printStar").innerText += `*`;
+          }
+          document.getElementById("printStar").innerHTML += `<br>`;
+        }
+      }
+    </script>
+  </body>
+</html>

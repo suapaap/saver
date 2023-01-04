@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 속성</title>
+    <!-- 
+        text-indent : 들여쓰기 값 => 들여쓰기 길이
+        text-align : 정렬 : left,right,center,justify(양쪽정렬)
+        text-decoration : 밑줄긋기
+            - none : 없음
+            - underline : 밑줄
+            - overline : 윗줄
+            - line-through : 취소선
+     -->
+     <!-- 
+        css 표준단위
+        px : 고정된 px 단위(1/96in)
+        pt : 포인트 (1/72in)
+        pc : 피카소 (1/6in)
+        cm/mm/in : 센티미터, 밀리미터, 인치
+        % : %값
+        em : 배수 1em, 0.5em, 2em
+        rem : 루트요소 기준
+        deg : 각도
+      -->
+      <!-- 
+        font 속성 : 글자모양, 크기, 속성, 굵기
+        font - size
+        font - style
+        font - weight
+        font:style - . weight -> size
+        font-family : 글자체를 여러개 지정
+            - 지정하려는 폰트를 ,로 나열
+            - 한글폰트의 경우, 한글이름, 영어이름을 같이 사용
+            - 마지막에 기본형 serif
+            - 폰트 이름에 띄어쓰기가 있는경우 "맑은 고딕" 없으면 ""생략가능
+       -->
+       
+      <style>
+        p{
+            text-indent: 20px;
+            text-align: center;
+            text-decoration: underline;
+            font-size: 20px;
+            font-weight: 700;
+            font-style: italic;
+            font-family: Arial, Helvetica, sans-serif;
+            /* box 에 대한 속성 */
+            border: solid 1px;
+            box-shadow: 5px 5px 5px gray;
+            border-radius: 10px;
+        }
+        .line{
+            /* 
+            text-overflow : 텍스트 범위를 넘어갔을 때
+            white-space : 글자들이 범위를 넘어갔을 때 처리하는 방법을 정하는 속성
+            - nowrap : 한줄로 처리
+            overflow : 넘어간 글자들을 처리하는 방법
+            - hidden : 숨김
+            - scrool : 스크롤바 생김
+            - auto : 넘어가면 스크롤바가 생김
+            */
+            width: 60%;
+            text-overflow: ellipsis;
+            
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            /* white-space: nowrap;*/
+            /* border: 1px solid red; */
+            /* text-shadow: 1px 1px 2px gold; */
+        }
+      </style>
+</head>
+<body>
+    <p>
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+    </p>
+    <p class="line">
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+        안녕하세요. 홍길동입니다!!
+    </p>
+</body>
+</html>

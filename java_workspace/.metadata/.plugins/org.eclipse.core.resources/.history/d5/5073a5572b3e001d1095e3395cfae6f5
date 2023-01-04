@@ -1,0 +1,47 @@
+package day10;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class List02 {
+
+	public static void main(String[] args) {
+		/* --메뉴판--
+		 * 1. 햄버거 : 15000
+		 * 2. 피자 : 20000
+		 * 3. 음료 : 2000
+		 * 4. 과자 : 1000
+		 * 5. 사탕 : 500
+		 * 6. 프로그램종료
+		 * 
+		 * 메뉴를 선택해주세요. 
+		 * 수량을 선택해주세요.
+		 * 추가 주문하시겠습니까? (Y/N)
+		 * 
+		 *  --선택한 메뉴
+		 *  햄버거 1개 : 15000
+		 *  피자 2개 : 40000
+		 *  주문하신 음식의 총 금액은 55000원입니다.
+		 * */
+		Scanner scan = Scanner (System.in);
+		
+		List<String> food = new ArrayList<String>();
+		List<Integer> price = new ArrayList<Integer>();	
+		
+		food.add("1. 햄버거");
+		food.add("2. 피자");
+		food.add("3. 음료수(콜라/사이다)");
+		food.add("4. 과자");
+		food.add("5. 사탕");
+		System.out.println(food);
+	}
+
+}
+
+class FoodManager{
+	private String food;
+	private int price;
+	
+	public void 
+}

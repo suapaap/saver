@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색창예제</title>
+    <style>
+    /* 
+        input[type="text"]{
+        border-right: 30px solid #19c260;
+        background-color: white;
+        border-collapse: collapse;
+    }  */
+    
+    .serch-left{
+        width: 300px;
+        height: 50px;
+        border: 1px solid #19ce60;
+        float: left;
+        position: relative;
+        border-radius: 3px 0 0 3px;
+    }
+    .serch-left::after{
+        clear: both;
+        display: block;
+    }
+    .serch-button{
+        width: 52px;
+        height: 52px;
+        background-color: #19ce60;
+        border: 0px solid;
+        border-radius: 0 3px 3px 0;
+    }
+    input[type="text"]{
+        width: 90%;
+        height: 70%;
+        border: 0;
+        outline: none;
+        font-size: 100%;
+        position: absolute;
+        top: 5px; left: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="serch-box">
+        <div class="serch-left">
+            <input type="text">
+        </div>
+        <button class="serch-button"></button>
+    </div>
+</body>
+</html>

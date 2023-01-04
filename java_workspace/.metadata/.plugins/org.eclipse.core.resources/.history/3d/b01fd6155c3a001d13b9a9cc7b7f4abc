@@ -1,0 +1,63 @@
+package day08;
+
+import java.util.Scanner;
+
+public class 확장자찾기 {
+
+	public static void main(String[] args) {
+		/* 5개 문자열 배열을 생선한 후, 5개의 파일명을 입력받는 코드를 작성
+		 * 입력받은 파일명 중 이미지 파일을 검색하여 출력하는 코드를 작성
+		 * 이미지 형식 파일 (jpg,png,gif,jpeg)
+		 * */
+		Scanner scan = new Scanner(System.in);
+		int []file = new int[5];
+		String serch = "";
+		int cnt =0;
+		int end =0;
+		String addfile = "";
+		int menu ;
+		do {
+			System.out.println("---Menu---");
+			System.out.println("원하시는 메뉴를 고르세요");
+			System.out.println("1. 파일명 등록하기");
+			System.out.println("2. 파일찾기");
+			System.out.println("3. 종료");
+			menu = scan.nextInt();
+			
+			switch(menu){
+			case 1 : System.out.println("파일등록할 파일명을 입력하세요.");
+			System.out.println("확장자명을 필수로 입력해주세요.");
+			addfile=scan.next();
+			
+			cnt++;
+			System.out.println("저장이 완료되었습니다");
+					break;
+					
+			case 2 : System.out.println("찾으시는 파일명을 입력하세요.");
+			serch = scan.next();
+			for(int i=0; i<file.length; i++) {
+			}
+			System.out.println();
+			
+			case 3 : System.out.println("종료합니다");
+			break;
+			}
+			
+		} while(3!=3);
+		
+		
+	}
+	/* 기능 : 배열에서 찾는 문자열이 있는지 없는지 확인해서 알려주는 메서드
+	 * 매개변수 : 배열, 찾는 값
+	 * 리턴타입 : boolean 
+	 * 메서드명 : isContain 
+	 */
+	public static boolean serch(String file, String name) {
+		if(file == name) {
+			System.out.println("찾으시는 파일은 " +file+ "입니다.");
+		} else {
+			System.out.println("찾으시는 파일이 없습니다.");
+		}
+		return true;
+		}
+}

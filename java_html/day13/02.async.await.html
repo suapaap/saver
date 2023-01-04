@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>async await keyword</title>
+  </head>
+  <body>
+    <h1>
+      Promise객체 : 객체의 데이터 통신을 편리하게 할수 있도록 제공하는 키워드
+    </h1>
+    <ul>
+      <li>
+        async 키워드 : 함수 선언 키워드(function)앞에 사용하면 그 함수의 리턴을
+        프로미스 객체 타입으로 만들어 줌
+      </li>
+      <li>
+        await 키워드 : 순차적 코드 실행시 데이터 통신과 같은 지연로딩 및
+        지연실행 상황이 발생할 경우 코드 실행 순서를 순차적으로 진행할 수 있도록
+        보증한다. 즉 이전 라인의 코드 실행이 완료될 때까지 다음라인 실행을
+        기다리게 하는 기능
+      </li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <h3>http://jsonplaceholder.typicode.com/todos/1</h3>
+    <button type="button" id="btn">데이터 불러오기</button>
+    <h3 id="abc"></h3>
+    <ul id="aaa"></ul>
+    <script>
+      //버튼을 클릭하면 위 사이트를 데이터 콘솔에 출력
+      document.getElementById("btn").addEventListener("click", function () {
+        async function fetchAndwait() {
+          try {
+            const resp = await fetch(
+              "http://jsonplaceholder.typicode.com/todos/1"
+            );
+            const result = await resp.json(); // resp.text() 은 텍스트형태로 가져옴
+            console.log(result);
+            // document.getElementById("aaa").innerHTML = "";
+            for (const key in result) {
+                document.getElementById(
+                    "aaa"
+                    ).innerHTML += `<li>${key}:${result[key]}</li>`;
+                }
+          } catch (error) {
+            console.log(error); //error가 났을 경우
+          } finally {
+            console.log("async finish");
+          }
+        }
+        fetchAndwait();
+      });
+    </script>
+  </body>
+</html>
